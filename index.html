@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PTFS Charts</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Website Title -->
+  <div class="website-title">
+    <h1>PTFS Charts</h1>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-bar" id="search-bar">
+    <input type="text" id="airport-input" placeholder="Enter airport code (e.g., KJFK)">
+    <button onclick="loadCharts()"><i class="fas fa-search"></i> Search</button>
+  </div>
+
+  <!-- Button to Reopen Search -->
+  <button class="open-search-button" id="open-search-button" onclick="openSearch()">
+    <i class="fas fa-search"></i>
+  </button>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="button-row">
+      <div class="button-container">
+        <button class="nav-button" data-color="red" onclick="selectButton('GEN')">GEN</button>
+        <div class="underline" style="background-color: red;"></div>
+      </div>
+      <div class="button-container">
+        <button class="nav-button" data-color="hotpink" onclick="selectButton('GND')">GND</button>
+        <div class="underline" style="background-color: hotpink;"></div>
+      </div>
+      <div class="button-container">
+        <button class="nav-button" data-color="purple" onclick="selectButton('SID')">SID</button>
+        <div class="underline" style="background-color: purple;"></div>
+      </div>
+      <div class="button-container">
+        <button class="nav-button" data-color="cyan" onclick="selectButton('STAR')">STAR</button>
+        <div class="underline" style="background-color: cyan;"></div>
+      </div>
+      <div class="button-container">
+        <button class="nav-button" data-color="green" onclick="selectButton('APP')">APP</button>
+        <div class="underline" style="background-color: green;"></div>
+      </div>
+    </div>
+
+    <!-- Author Dropdown -->
+    <div class="dropdown-container" id="author-dropdown-container" style="display: none;">
+      <select id="author-dropdown" onchange="selectAuthor()">
+        <option value="">Select Author</option>
+      </select>
+    </div>
+
+    <!-- Chart Display Area -->
+    <!-- Default chart area for SID, APP, STAR -->
+<div id="chart-display-default" class="chart-display"></div>
+
+<!-- Special chart area for GEN and GND (positioned lower) -->
+<div id="chart-display-gen-gnd" class="chart-display-gen-gnd" style="display: none;"></div>
+
+      <!-- Charts will be dynamically inserted here -->
+    </div>
+  </div>
+
+  <!-- PDF Viewer -->
+  <div class="pdf-viewer" id="pdf-viewer">
+    <iframe id="pdf-iframe" src="" width="100%" height="100%"></iframe>
+    <button class="close-pdf" onclick="closePdfViewer()"><i class="fas fa-times"></i></button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

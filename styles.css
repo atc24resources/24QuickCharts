@@ -1,0 +1,279 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Website Title */
+.website-title {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+.website-title h1 {
+  margin: 0;
+  font-size: 32px;
+  color: white;
+}
+
+/* Search Bar */
+.search-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: #2c3e50;
+  z-index: 999;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.search-bar.minimized {
+  transform: translateY(-100%);
+}
+
+.search-bar input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #16a085;
+}
+
+/* Button to Reopen Search */
+.open-search-button {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.open-search-button:hover {
+  background-color: #16a085;
+}
+
+/* Sidebar */
+.sidebar {
+  display: none;
+  flex-direction: column;
+  width: 350px;
+  height: 100vh;
+  background-color: #2c3e50;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+}
+
+/* Button Row */
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 60px;
+  left: 0px;
+  width: 350px;
+  background-color: #2c3e50;
+  padding: 10px;
+  z-index: 999;
+  gap: 5px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.nav-button {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  background-color: #34495e;
+}
+
+.nav-button:hover {
+  background-color: #1abc9c;
+}
+
+.underline {
+  width: 100%;
+  height: 3px;
+}
+
+.nav-button.selected {
+  background-color: var(--selected-color);
+}
+
+/* Dropdown container */
+.dropdown-container {
+  margin-top: 120px;
+  padding: 10px;
+  background-color: #2c3e50;
+}
+
+.dropdown-container select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #34495e;
+  color: white;
+}
+
+.chart-display {
+  margin-top: 120px; /* NEW: safely below the fixed top button row */
+  padding: 10px;
+  overflow-y: auto;
+  max-height: calc(100vh - 160px); /* adjust height to avoid overflow */
+}
+
+.chart-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #34495e;
+  border-radius: 5px;
+}
+
+.chart-item h4 {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.chart-button {
+  display: block;
+  width: calc(100% - 20px); /* full width minus padding */
+  margin: 10px;
+  padding: 12px 15px;
+  background-color: #34495e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chart-button:hover {
+  background-color: #1abc9c;
+}
+
+/* PDF Viewer */
+.pdf-viewer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 360px; /* ← was 350px */
+  width: calc(100% - 360px); /* ← was 100% - 350px */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+
+.close-pdf {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-pdf:hover {
+  background-color: #c0392b;
+}
+
+.chart-button {
+  display: block;
+  width: calc(100% - 20px);
+  margin: 10px;
+  padding: 12px 15px;
+  background-color: #34495e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chart-button:hover {
+  background-color: #1abc9c;
+}
+
+.chart-display {
+  margin-top: 10px;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: calc(100vh - 160px);
+}
+
+.chart-display-gen-gnd {
+  margin-top: 120px;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: calc(100vh - 160px);
+}
+
+.pdf-viewer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 360px;
+  width: calc(100% - 360px);
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+
+.nav-button.disabled {
+  background-color: #7f8c8d !important; /* grey tone */
+  color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none; /* ensures it's completely unclickable */
+}
+
+.nav-button.disabled:hover {
+  background-color: #7f8c8d !important;
+}
