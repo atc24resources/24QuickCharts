@@ -404,7 +404,7 @@ const chartData = {
       { name: "IRFD General Information by <b>AeroNav</b>", pdf: "charts/IRFD/GEN/IRFD General Info.pdf" },
       { name: "Obstacale Notes - Noise Abatement by <b>AeroNav</b>", pdf: "charts/IRFD/GEN/Obstacale Notes - Noise Abatement.pdf" },
       { name: "Departure and Arrival Suggestions by <b>AeroNav</b>", pdf: "charts/IRFD/GEN/STARSIDSuggestion.pdf" },
-      { name: "VFR Sectional Chart Rockford by <b>AeroNav</b>", pdf: "charts/IRFD/GEN/VFR Sectional Chart.pdf" }
+      { name: "VFR Sectional Chart by <b>AeroNav</b>", pdf: "charts/IRFD/GEN/VFR Sectional Chart.pdf" }
     ],
     GND: [
       { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IRFD/GND/IRFD Ground Chart.pdf" }
