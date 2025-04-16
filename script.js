@@ -7,7 +7,7 @@ const chartData = {
       { name: "Suggested Departures and Arrival by <b>AeroNav</b>", pdf: "charts/ISAU/GEN/Suggested STAR and SID.pdf" }
     ],
     GND: [
-      { name: "Airport Diagram from PTFS.xyz/chart ", pdf: "charts/ISAU/GND/ISAU Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/ISAU/GND/ISAU Ground Chart.pdf" }
     ],
     SID: {
       authors: {
@@ -41,52 +41,11 @@ const chartData = {
     }
   },
   TVO: {
-    GEN: [
-      { name: "Airport Diagram", pdf: "gen1.pdf" },
-      { name: "General Information", pdf: "gen2.pdf" }
-    ],
-    GND: [
-      { name: "Ground Movement Chart", pdf: "gnd1.pdf" },
-      { name: "Apron Chart", pdf: "gnd2.pdf" }
-    ],
-    SID: {
-      authors: {
-        "Author 1": [
-          { name: "SID Chart 1", pdf: "charts/irfd_sid1.pdf" },
-          { name: "SID Chart 2", pdf: "charts/irfd_sid2.pdf" },
-          { name: "SID Chart 3", pdf: "charts/irfd_sid3.pdf" },
-          { name: "SID Chart 4", pdf: "charts/irfd_sid4.pdf" },
-          { name: "SID Chart 5", pdf: "charts/irfd_sid5.pdf" },
-          { name: "SID Chart 6", pdf: "charts/irfd_sid6.pdf" },
-          { name: "SID Chart 7", pdf: "charts/irfd_sid7.pdf" }
-        ]
-      }
-    },
-    STAR: {
-      authors: {
-        "Author 1": [
-          { name: "STAR Chart 1", pdf: "charts/irfd_sid1.pdf" },
-          { name: "STAR Chart 2", pdf: "charts/irfd_sid2.pdf" },
-          { name: "STAR Chart 3", pdf: "charts/irfd_sid3.pdf" },
-          { name: "STAR Chart 4", pdf: "charts/irfd_sid4.pdf" },
-          { name: "STAR Chart 5", pdf: "charts/irfd_sid5.pdf" },
-          { name: "STAR Chart 6", pdf: "charts/irfd_sid6.pdf" },
-          { name: "STAR Chart 7", pdf: "charts/irfd_sid7.pdf" }
-        ]
-      }
-    },
-    APP: {
-      authors: {
-        "Author 1": [
-          { name: "ILS RWY 08L", pdf: "app1.pdf" },
-          { name: "RNAV RWY 08L", pdf: "app2.pdf" }
-        ],
-        "Author 2": [
-          { name: "VOR RWY 26R", pdf: "app3.pdf" },
-          { name: "LOC RWY 26R", pdf: "app4.pdf" }
-        ]
-      }
-    }
+    //NO GEN
+    //NO GND
+    //NO SID
+    //NO STAR
+    //NO APP
   },
   IGRV: {
     GEN: [
@@ -129,7 +88,7 @@ const chartData = {
       { name: "De-Icing Procedures <b>AeroNav</b>", pdf: "charts/ITKO/GEN/De-Icing Pro.pdf" }
     ],
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/ITKO/GND/ITKO Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/ITKO/GND/ITKO Ground Chart.pdf" }
     ],
     SID: {
       authors: {
@@ -171,7 +130,7 @@ const chartData = {
 
     ],
     GND: [
-      { name: "Ground Diagram", pdf: "charts/IDCS/GND/IDCS Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IDCS/GND/IDCS Ground Chart.pdf" }
     ],
     //No SID
     //no STAR
@@ -183,7 +142,7 @@ const chartData = {
       { name: "Runway Information by <b>AeroNav</b>", pdf: "charts/IPPH/GEN/RUNWAY INFORMATION.pdf" }
     ],
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IPPH/GND/IPPH Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IPPH/GND/IPPH Ground Chart.pdf" }
     ],
     SID: {
       authors: {
@@ -229,7 +188,7 @@ const chartData = {
   ILKL: {
       //NO GND
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/ILKL/GND/ILKL Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/ILKL/GND/ILKL Ground Chart.pdf" }
     ],
       //NO SID
       //NO STAR
@@ -238,7 +197,7 @@ const chartData = {
   ISCM: {
       //NO GEN
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/ISCM/GND/ISCM Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/ISCM/GND/ISCM Ground Chart.pdf" }
     ],
       //NO SID
       //NO STAR
@@ -247,7 +206,7 @@ const chartData = {
   IJAF: {
       //NO GEN
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IJAF/GND/IJAF Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IJAF/GND/IJAF Ground Chart.pdf" }
     ],
       //NO SID
       //NO STAR
@@ -256,7 +215,7 @@ const chartData = {
   IZOL: {
       //NO GEN
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IZOL/GND/IZOL Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IZOL/GND/IZOL Ground Chart.pdf" }
     ],
       //NO SID
       //NO STAR
@@ -265,7 +224,7 @@ const chartData = {
   ISKP: {
       //NO GEN
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/ISKP/GND/ISKP Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/ISKP/GND/ISKP Ground Chart.pdf" }
     ],
       //NO SID
       //NO STAR
@@ -274,7 +233,7 @@ const chartData = {
   IHEN: {
       //NO GEN
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IHEN/GND/IHEN Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IHEN/GND/IHEN Ground Chart.pdf" }
     ],
       //NO SID
       //NO STAR
@@ -285,7 +244,7 @@ const chartData = {
       { name: "General Information", pdf: "charts/IIAB/GEN/GENERALINFO.pdf" }
     ],
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IIAB/GND/IIAB Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IIAB/GND/IIAB Ground Chart.pdf" }
     ],
     SID: {
       authors: {
@@ -313,7 +272,7 @@ const chartData = {
   IBAR: {
       //NO GEN
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IBAR/GND/IBAR Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IBAR/GND/IBAR Ground Chart.pdf" }
     ],
       //NO SID
       //NO STAR
@@ -325,7 +284,7 @@ const chartData = {
       { name: "TakeOff Minimums by <b>AeroNav</b>", pdf: "charts/IPAP/GEN/Takeoff Minimums.pdf" }
     ],
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IPAP/GND/IPAP Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IPAP/GND/IPAP Ground Chart.pdf" }
     ],
     SID: {
       authors: {
@@ -359,7 +318,7 @@ const chartData = {
       { name: "Crib Sheet by <b>VilleTheDude, Willek10</b>", pdf: "charts/ILAR/GEN/Crib sheet.pdf" }
     ],
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/ILAR/GND/ILAR Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/ILAR/GND/ILAR Ground Chart.pdf" }
     ],
     SID: {
       authors: {
@@ -406,7 +365,7 @@ const chartData = {
   IBTH: {
       //NO GEN
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IBTH/GND/IBTH Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IBTH/GND/IBTH Ground Chart.pdf" }
     ],
     SID: {
       authors: {
@@ -448,7 +407,7 @@ const chartData = {
       { name: "VFR Sectional Chart Rockford by <b>AeroNav</b>", pdf: "charts/IRFD/GEN/VFR Sectional Chart.pdf" }
     ],
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IRFD/GND/IRFD Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IRFD/GND/IRFD Ground Chart.pdf" }
     ],
     SID: {
       authors: {
@@ -498,7 +457,7 @@ const chartData = {
   ITRN: {
       //NO GEN
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/ITRN/GND/ITRC Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/ITRN/GND/ITRC Ground Chart.pdf" }
     ]
     //No SID 
     //No STAR 
@@ -507,7 +466,7 @@ const chartData = {
   IGAR: {
     //No Gen
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IGAR/GND/IGAR Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IGAR/GND/IGAR Ground Chart.pdf" }
     ]
     //No SID
     //No STAR 
@@ -516,7 +475,7 @@ const chartData = {
   IBLT: {
       //No GEN
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IBLT/GND/IBLT Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IBLT/GND/IBLT Ground Chart.pdf" }
     ],
       //NO SID
       //No STAR
@@ -528,7 +487,7 @@ const chartData = {
       { name: "VFR Sectional Chart by <b>AeroNav</b>", pdf: "charts/IMLR/GEN/VFR SECTIONAL CHART.pdf" }
     ],
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>t", pdf: "charts/IMLR/GND/IMLR Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IMLR/GND/IMLR Ground Chart.pdf" }
     ],
     SID: {
       authors: {
