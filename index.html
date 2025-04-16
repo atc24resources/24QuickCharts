@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <!-- Website Title -->
   <div class="website-title">
     <h1>24SmartCharts</h1>
@@ -16,7 +17,7 @@
   <!-- Search Bar -->
   <div class="search-bar" id="search-bar">
     <input type="text" id="airport-input" placeholder="Enter airport code (e.g., IRFD)">
-    <button onclick="loadCharts()"><i class="fas fa-search"></i>Search</button>
+    <button onclick="loadCharts()"><i class="fas fa-search"></i> Search</button>
   </div>
 
   <!-- Button to Reopen Search -->
@@ -56,15 +57,9 @@
       </select>
     </div>
 
-    <!-- Chart Display Area -->
-    <!-- Default chart area for SID, APP, STAR -->
-<div id="chart-display-default" class="chart-display"></div>
-
-<!-- Special chart area for GEN and GND (positioned lower) -->
-<div id="chart-display-gen-gnd" class="chart-display-gen-gnd" style="display: none;"></div>
-
-      <!-- Charts will be dynamically inserted here -->
-    </div>
+    <!-- Chart Display Areas -->
+    <div id="chart-display-default" class="chart-display"></div>
+    <div id="chart-display-gen-gnd" class="chart-display-gen-gnd" style="display: none;"></div>
   </div>
 
   <!-- PDF Viewer -->
@@ -73,6 +68,30 @@
     <button class="close-pdf" onclick="closePdfViewer()"><i class="fas fa-times"></i></button>
   </div>
 
+  <!-- ✅ Always-visible Credits Button -->
+  <button id="credits-toggle" class="credits-button">
+    <i class="fas fa-info-circle"></i> Credits
+  </button>
+
+  <!-- ✅ Credits Modal -->
+  <div id="credits-overlay" class="credits-overlay">
+    <div class="credits-content">
+      <button class="close-credits" onclick="toggleCredits(false)">
+        <i class="fas fa-times"></i>
+      </button>
+      <h2>Credits</h2>
+      <p>This project includes charts created by the ATC24 Community and the PTFS Staff. </p>
+      <ul>
+        <li>All Ground Charts/Airport Diagrams under the GND button selection are available at https://github.com/Treelon/ptfs-charts, and are licensed under the CC BY SA 4.0. </li>
+        <li> Charts for the following Airports were used in one way or another, were made by <b>AeroNav</b>. The name is listed on the dropdown of different airports, and the titles of the chart buttons on others: 
+        ISAU, IGRV, ITKO, IPPH, IIAB, IPAP, ILAR, IBTH, IRFD, IMLR.</li>
+        <li>ILAR Charts where made by VilleTheDude and Willek10</li>
+        <!-- Add more credits here -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
