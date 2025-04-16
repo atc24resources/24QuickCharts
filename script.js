@@ -727,3 +727,12 @@ function openSearch() {
   searchBar.classList.remove("minimized");
   document.getElementById("open-search-button").style.display = "none";
 }
+
+function toggleCredits(show) {
+  const overlay = document.getElementById("credits-overlay");
+  overlay.style.display = show ? "block" : "none";
+}
+
+document.getElementById("credits-toggle").addEventListener("click", () => {
+  toggleCredits(true);
+});
