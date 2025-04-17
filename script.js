@@ -90,7 +90,8 @@ const chartData = {
   },
   IGRV: {
     GEN: [
-      { name: "General Information by <b>AeroNav</b>", pdf: "charts/IGRV/GEN/GENERAL INFOR.pdf" }
+      { name: "General Information by <b>AeroNav</b>", pdf: "charts/IGRV/GEN/GENERAL INFOR.pdf" },
+      { name: "Controll Zone Chart by <b>FormicAcid</b>", pdf: "charts/IGRV/GEN/FORMIC/CONTROLLZONE CHART.pdf" }
     ],
     GND: [
       { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IGRV/GND/IGRV Ground Chart.pdf" }
@@ -102,6 +103,11 @@ const chartData = {
           { name: "HAWKN1 RNAV", pdf: "charts/IGRV/SID/HAWKN1 RNAV.pdf" },
           { name: "THENR3 RNAV", pdf: "charts/IGRV/SID/THENR3 RNAV.pdf" },
           { name: "YOUTH4 RNAV", pdf: "charts/IGRV/SID/YOUTH4 RNAV.pdf" }
+        ],
+        "FormicAcid": [
+          { name: "BLANK1K RNAV ", pdf: "charts/IGRV/SID/FORMIC/BLANK1K.pdf" },
+          { name: "BLANK1L RNAV", pdf: "charts/IGRV/SID/FORMIC/BLANK1L.pdf" },
+          { name: "THACC1K RNAV", pdf: "charts/IGRV/SID/THENR3 RNAV.pdf" }
         ]
       }
     },
@@ -111,6 +117,10 @@ const chartData = {
           { name: "CLEAR4 RNAV", pdf: "charts/IGRV/STAR/CLEAR4 RNAV.pdf" },
           { name: "GOLDN1 RNAV", pdf: "charts/IGRV/STAR/GOLDN1 RNAV.pdf" },
           { name: "SPACE1 RNAV", pdf: "charts/IGRV/STAR/SPACE1 RNAV.pdf" }
+        ],
+        "FormicAcid": [
+          { name: "BLANK1T RNAV ", pdf: "charts/IGRV/STAR/FORMIC/BLANK1T.pdf" },
+          { name: "SPACE1Z RNAV", pdf: "charts/IGRV/STAR/FORMIC/SPACE1Z.pdf" }
         ]
       }
     },
@@ -119,6 +129,13 @@ const chartData = {
         "AeroNav": [
           { name: "RNP RWY 06", pdf: "charts/IGRV/APP/RNP RWY 06.pdf" },
           { name: "RNP RWY 24", pdf: "app2.pdf" }
+        ],
+        "FormicAcid": [
+          { name: "ILS or LOC RWY 06 ", pdf: "charts/IGRV/APP/FORMIC/ILS:LOC RWY06.pdf" },
+          { name: "MLS RWY 24", pdf: "charts/IGRV/APP/FORMIC/MLS RWY 24.pdf" },
+          { name: "RNP RWY 24", pdf: "charts/IGRV/APP/RNP RWY 06.pdf" },
+          { name: "RNP Y RWY 06", pdf: "charts/IGRV/APP/FORMIC/RNP Y RWY06.pdf" },
+          { name: "RNP Z RWY 06 ", pdf: "charts/IGRV/APP/FORMIC/RNP Z RWY 06.pdf" }
         ]
       }
     }
@@ -167,14 +184,31 @@ const chartData = {
   },
   IDCS: {
     GEN: [
-      { name: "TBA", pdf: "" }
+      { name: "General Information by <b>MR.GEARZ</b>", pdf: "charts/IDCS/GEN/General Info by MR.GEARZ.pdf" }
 
     ],
     GND: [
-      { name: "Ground Diagram", pdf: "charts/IDCS/GND/IDCS Ground Chart.pdf" }
+      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IDCS/GND/IDCS Ground Chart.pdf" }
     ],
-    //No SID
-    //no STAR
+    SID: {
+      authors: {
+        "MR.GEARZ": [
+          { name: "BULLY1A RNAV", pdf: "charts/IDCS/SID/MR.GEARZ/BULLY1A.pdf" },
+          { name: "PIPER1A RNAV", pdf: "charts/IDCS/SID/MR.GEARZ/PIPER1A.pdf" },
+          { name: "PIPER1B RNAV", pdf: "charts/IDCS/SID/MR.GEARZ/PIPER1B.pdf" }
+        ]
+      }
+    },
+    STAR: {
+      authors: {
+        "MR.GEARZ": [
+          { name: "BULLY1B RNAV", pdf: "charts/IDCS/STAR/MR.GEARZ/BULLY1B.pdf" },
+          { name: "GULEG1A RNAV", pdf: "charts/IDCS/STAR/MR.GEARZ/GULEG1A.pdf" },
+          { name: "KNIFRE1A RNAV", pdf: "charts/IDCS/STAR/MR.GEARZ/KNIFE1A.pdf" },
+          { name: "TINDER1A RNAV", pdf: "charts/IDCS/STAR/MR.GEARZ/TINDER1A.pdf" }
+        ]
+      }
+    },
     //No APPR
   },
   IPPH: {
@@ -291,6 +325,10 @@ const chartData = {
       authors: {
         "AeroNav": [
           { name: "AIRBASE1 (IAB1)", pdf: "charts/IIAB/SID/AIRBASE1 (IAB1).pdf" }
+        ],
+        "p1anes/p1anez": [
+          { name: "CANDLE1 RNAV", pdf: "charts/IIAB/SID/p1anes:p1anez/CANDLE1.pdf" },
+          { name: "CANDLE2 RNAV", pdf: "charts/IIAB/SID/p1anes:p1anez/CANDLE2.pdf" }
         ]
       }
     },
@@ -298,26 +336,63 @@ const chartData = {
       authors: {
         "AeroNav": [
           { name: "LARNACA1 (LCK1)", pdf: "charts/IIAB/STAR/LARNACA1 (LCK1).pdf" }
+        ],
+        "p1anes/p1anez": [
+          { name: "ASPENER3A", pdf: "charts/IIAB/STAR/p1anes:p1anez/ASPENER3A.pdf" },
+          { name: "ASPENER4A", pdf: "charts/IIAB/STAR/p1anes:p1anez/ASPENER4A.pdf" },
+          { name: "DEBUG4A", pdf: "charts/IIAB/STAR/p1anes:p1anez/DEBUG4A.pdf" },
+          { name: "RENTS3A", pdf: "charts/IIAB/STAR/p1anes:p1anez/RENTS3A.pdf" },
+          { name: "RENTS4A", pdf: "charts/IIAB/STAR/p1anes:p1anez/RENTS4A.pdf" }
         ]
       }
     },
     APP: {
       authors: {
-        "Author 1": [
+        "AeroNav": [
           { name: "ILS or LOC RWY 09L", pdf: "charts/IIAB/APP/ILS OR LOC RWY09L.pdf" },
           { name: "ILS or LOC RWY 09R", pdf: "charts/IIAB/APP/ILS OR LOC RWY09R.pdf" }
+        ],
+        "p1anes/p1anez": [
+          { name: "ILS or LOC RWY 09L", pdf: "charts/IIAB/APP/p1anes:p1anez/ILS RWY 09L.pdf" },
+          { name: "ILS or LOC RWY 09R", pdf: "charts/IIAB/APP/p1anes:p1anez/ILS RWY 09R.pdf" },
+          { name: "LDA RWY 27L", pdf: "charts/IIAB/APP/p1anes:p1anez/LDA RWY 27L.pdf" },
+          { name: "LDA RWY 27R", pdf: "charts/IIAB/APP/p1anes:p1anez/LDA RWY 27R.pdf" }
         ]
       }
     }
   },
   IBAR: {
-      //NO GEN
+    GEN: [
+      { name: "General Information by userwastaken, din0_nuggies21", pdf: "charts/IBAR/GEN/GENERALINFO - USERWASTAKEN, DIN0_NUGGIES21.pdf" }
+    ],
     GND: [
       { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IBAR/GND/IBAR Ground Chart.pdf" }
     ],
-      //NO SID
-      //NO STAR
-      //NO APP
+    SID: {
+      authors: {
+        "userwastaken, din0_nuggies21": [
+          { name: "GRASS1C", pdf: "charts/IBAR/SID/GRASS1C - USERWASTAKEN, DIN0_NUGGIES21.pdf" },
+          { name: "JACKI1A", pdf: "charts/IBAR/SID/JACKI1A - USERWASTAKEN, DIN0_NUGGIES21.pdf" },
+          { name: "LAZER1B", pdf: "charts/IBAR/SID/LAZER1B - USERWASTAKEN, DIN0_NUGGIES21.pdf" }
+        ]
+      }
+    },
+    STAR: {
+      authors: {
+        "userwastaken, din0_nuggies21": [
+          { name: "AQWRT2C", pdf: "charts/IBAR/STAR/AQWRT2C - USERWASTAKEN, DIN0_NUGGIES21.pdf" },
+          { name: "BOBUX2A", pdf: "charts/IBAR/STAR/BOBUX2A - USERWASTAKEN, DIN0_NUGGIES21.pdf" },
+          { name: "RENTS2B", pdf: "charts/IBAR/STAR/RENTS2B USERWASTAKEN, DIN0_NUGGIES21.pdf" }
+        ]
+      }
+    },
+    APP: {
+      authors: {
+        "userwastaken, din0_nuggies21 1": [
+          { name: "ILS or LOC RWY SAND", pdf: "charts/IBAR/APP/ILS or LOC RWY Sand.pdf" }
+        ]
+      }
+    }
   },
   IPAP: {
     GEN: [
@@ -404,7 +479,11 @@ const chartData = {
     }
   },
   IBTH: {
-      //NO GEN
+    GEN: [
+      { name: "General Information by <b>Alisoe</b>", pdf: "charts/IBTH/GEN/GENERAL INFO.pdf" },
+      { name: "AeroDrome Obstacle Chart by <b>Alisoe</b>", pdf: "charts/IBTH/GEN/AERODROME obstical Chart.pdf" }
+
+    ],
     GND: [
       { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IBTH/GND/IBTH Ground Chart.pdf" }
     ],
@@ -416,6 +495,28 @@ const chartData = {
           { name: "OCEAN1 RNAV", pdf: "charts/IBTH/SID/OCEAN1 RNAV.pdf" },
           { name: "RESURGE1 RNAV (RES1)", pdf: "charts/IBTH/SID/RESURGE1 RNAV RES1.pdf" },
           { name: "VONARX RNAV (VOX1)", pdf: "charts/IBTH/SID/VONARX RNAV (VOX1).pdf" }
+        ],
+        "Alisoe": [
+          { name: "INDEX1P RNAV", pdf: "charts/IBTH/SID/Alisoe/INDEX1P.pdf" },
+          { name: "INDEX1Q RNAV", pdf: "charts/IBTH/SID/Alisoe/INDEX1Q.pdf" },
+          { name: "INDEX2J RNAV", pdf: "charts/IBTH/SID/Alisoe/INDEX2J.pdf" },
+          { name: "OCEEN1P RNAV", pdf: "charts/IBTH/SID/Alisoe/OCEEN1P.pdf" },
+          { name: "OCEEN2J RNAV", pdf: "charts/IBTH/SID/Alisoe/OCEEN2J.pdf" },
+          { name: "ROM1P RNAV", pdf: "charts/IBTH/SID/Alisoe/ROM1P.pdf" },
+          { name: "ROM2J RNAV", pdf: "charts/IBTH/SID/Alisoe/ROM2J.pdf" },
+          { name: "SILVA1P RNAV", pdf: "charts/IBTH/SID/Alisoe/SILVA1P.pdf" },
+          { name: "SILVA2J RNAV", pdf: "charts/IBTH/SID/Alisoe/SILVA2J.pdf" },
+          { name: "VOX2J RNAV", pdf: "charts/IBTH/SID/Alisoe/VOX2J.pdf" }
+        ],
+        "SANDERLI25": [
+          { name: "CAMEL1F RNAV", pdf: "charts/IBTH/SID/SANDERLI25/CAMEL1F.pdf" },
+          { name: "INDEX1G RNAV", pdf: "charts/IBTH/SID/SANDERLI25/INDEX1G.pdf" },
+          { name: "OCEEN1G RNAV", pdf: "charts/IBTH/SID/SANDERLI25/OCEEN1G.pdf" },
+          { name: "PROBE1F RNAV", pdf: "charts/IBTH/SID/SANDERLI25/PROBE1F.pdf" },
+          { name: "PROBE1H RNAV", pdf: "charts/IBTH/SID/SANDERLI25/PROBE1H.pdf" },
+          { name: "ROMENS1F RNAV", pdf: "charts/IBTH/SID/SANDERLI25/ROMENS1F.pdf" },
+          { name: "SILVA1H", pdf: "charts/IBTH/SID/SANDERLI25/SAILVA1H.pdf" },
+          { name: "WELSH1H", pdf: "charts/IBTH/SID/SANDERLI25/WELSH1H.pdf" }
         ]
       }
     },
@@ -428,6 +529,24 @@ const chartData = {
           { name: "ROMENS1 RNAV", pdf: "charts/IBTH/STAR/ROMENS1 RNAV.pdf" },
           { name: "SILVA1 RNAV", pdf: "charts/IBTH/STAR/SILVA1 RNAV.pdf" },
           { name: "WELSH1 RNAV", pdf: "charts/IBTH/STAR/WELSH1 RNAV.pdf" }
+        ],
+        "Alisoe": [
+          { name: "INDEX2M RNAV", pdf: "charts/IBTH/STAR/Alisoe/INDEX2M - Alisoe.pdf" },
+          { name: "INDEX2V RNAV", pdf: "charts/IBTH/STAR/Alisoe/INDEX2V.pdf" },
+          { name: "INDEX2X RNAV", pdf: "charts/IBTH/STAR/Alisoe/INDEX2X.pdf" },
+          { name: "OCEEN2M RNAV", pdf: "charts/IBTH/STAR/Alisoe/OCEEN2M - Alisoe.pdf" },
+          { name: "OCEEN2V RNAV", pdf: "charts/IBTH/STAR/Alisoe/OCEEN2V.pdf" },
+          { name: "RES2X RNAV", pdf: "charts/IBTH/STAR/Alisoe/RES2X.pdf" },
+          { name: "ROM2M RNAV", pdf: "charts/IBTH/STAR/Alisoe/ROM2M - Alisoe.pdf" },
+          { name: "ROM2V RNAV", pdf: "charts/IBTH/STAR/Alisoe/ROM2V.pdf" },
+          { name: "SILVA2M RNAV", pdf: "charts/IBTH/STAR/Alisoe/SILVA2M - Alisoe .pdf" },
+          { name: "SILVA2V RNAV", pdf: "charts/IBTH/STAR/Alisoe/SILVA2V.pdf" },
+          { name: "VOX2M RNAV", pdf: "charts/IBTH/STAR/Alisoe/VOX2M - Alisoe.pdf" }
+        ],
+        "SANDERLI25": [
+          { name: "CAMEL1J RNAV", pdf: "charts/IBTH/STAR/SANDERLI25/CAMEL1J.pdf" },
+          { name: "PROBE1J RNAV", pdf: "charts/IBTH/STAR/SANDERLI25/PROBE1J.pdf" },
+          { name: "SILVA1J RNAV", pdf: "charts/IBTH/STAR/SANDERLI25/SILVA1J.pdf" }
         ]
       }
     },
@@ -600,12 +719,11 @@ function loadCharts() {
     });
 
     minimizeSearch();
+    document.getElementById("current-airport-display").innerText = currentAirport;
   } else {
     alert("Invalid airport code. Please try again.");
   }
 }
-
-
 
 function selectButton(buttonType) {
   currentChartType = buttonType;
@@ -662,7 +780,6 @@ function selectAuthor() {
   }
 }
 
-
 function displayGenGndCharts() {
   const chartDisplay = document.getElementById("chart-display-gen-gnd");
   const defaultDisplay = document.getElementById("chart-display-default");
@@ -678,10 +795,8 @@ function displayGenGndCharts() {
     </button>`;
   }).join("");
   
-
   chartDisplay.scrollTop = 0;
 }
-
 
 function displayAuthorCharts() {
   const chartDisplay = document.getElementById("chart-display-default");
@@ -704,7 +819,6 @@ function displayAuthorCharts() {
   chartDisplay.scrollTop = 0;
 }
 
-
 function openPdf(pdfUrl) {
   const pdfViewer = document.getElementById("pdf-viewer");
   const pdfIframe = document.getElementById("pdf-iframe");
@@ -719,13 +833,13 @@ function closePdfViewer() {
 function minimizeSearch() {
   const searchBar = document.getElementById("search-bar");
   searchBar.classList.add("minimized");
-  document.getElementById("open-search-button").style.display = "block";
+  document.getElementById("current-airport-display").style.display = "block";
 }
 
 function openSearch() {
   const searchBar = document.getElementById("search-bar");
   searchBar.classList.remove("minimized");
-  document.getElementById("open-search-button").style.display = "none";
+  document.getElementById("current-airport-display").style.display = "none";
 }
 
 function toggleCredits(show) {
@@ -735,4 +849,9 @@ function toggleCredits(show) {
 
 document.getElementById("credits-toggle").addEventListener("click", () => {
   toggleCredits(true);
+});
+
+// Theme Toggle
+document.getElementById("theme-toggle").addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
 });

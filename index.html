@@ -14,16 +14,16 @@
     <h1>24SmartCharts</h1>
   </div>
 
+  <!-- Header with Airport Display -->
+  <div class="header">
+    <div id="current-airport-display" style="display: none;">No Airport Selected</div>
+  </div>
+
   <!-- Search Bar -->
   <div class="search-bar" id="search-bar">
     <input type="text" id="airport-input" placeholder="Enter airport code (e.g., IRFD)">
     <button onclick="loadCharts()"><i class="fas fa-search"></i> Search</button>
   </div>
-
-  <!-- Button to Reopen Search -->
-  <button class="open-search-button" id="open-search-button" onclick="openSearch()">
-    <i class="fas fa-search"></i>
-  </button>
 
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
@@ -60,7 +60,26 @@
     <!-- Chart Display Areas -->
     <div id="chart-display-default" class="chart-display"></div>
     <div id="chart-display-gen-gnd" class="chart-display-gen-gnd" style="display: none;"></div>
+
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+      <p>24SmartCharts v1.0</p>
+    </div>
   </div>
+
+  <!-- Action Buttons (Bottom Right) -->
+  <a href="https://discord.gg/HCXeChs4Ye" target="_blank" class="action-button discord-button">
+    <i class="fab fa-discord"></i>
+  </a>
+
+  <button id="theme-toggle" class="action-button">
+    <i class="fas fa-adjust"></i>
+  </button>
+
+  <!-- Credits Button -->
+  <button id="credits-toggle" class="action-button" style="right: 145px;">
+    <i class="fas fa-info-circle"></i>
+  </button>
 
   <!-- PDF Viewer -->
   <div class="pdf-viewer" id="pdf-viewer">
@@ -68,12 +87,7 @@
     <button class="close-pdf" onclick="closePdfViewer()"><i class="fas fa-times"></i></button>
   </div>
 
-  <!-- ✅ Always-visible Credits Button -->
-  <button id="credits-toggle" class="credits-button">
-    <i class="fas fa-info-circle"></i> Credits
-  </button>
-
-  <!-- ✅ Credits Modal -->
+  <!-- Credits Modal -->
   <div id="credits-overlay" class="credits-overlay">
     <div class="credits-content">
       <button class="close-credits" onclick="toggleCredits(false)">
@@ -86,7 +100,6 @@
         <li>Chart for the following Airports where used in one way or another are made by <b>AeroNav</b>. The name is clearly listed on the dropdown of different airports and the titles of the chartbuttons on others: 
         ISAU, IGRV, ITKO, IPPH, IIAB, IPAP, ILAR, IBTH, IRFD, IMLR.</li>
         <li>ILAR Charts where made by VilleTheDude and Willek10</li>
-        <!-- Add more credits here -->
       </ul>
     </div>
   </div>

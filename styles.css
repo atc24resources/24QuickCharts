@@ -7,7 +7,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Website Title */
 .website-title {
   position: fixed;
   top: 10px;
@@ -21,17 +20,36 @@ body {
   color: white;
 }
 
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  background-color: #2c3e50;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#current-airport-display {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
 /* Search Bar */
 .search-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px;
+  padding: 15px 0;
   text-align: center;
   background-color: #2c3e50;
   z-index: 999;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
@@ -39,11 +57,24 @@ body {
   transform: translateY(-100%);
 }
 
+.search-bar.minimized input {
+  display: none;
+}
+
+/* Search Bar */
+.search-bar.minimized button {
+  position: fixed;
+  top: 10px;
+  right: 10px; /* Changed from left to right */
+  z-index: 1001;
+}
+
 .search-bar input {
   padding: 10px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
+  margin-right: 10px;
 }
 
 .search-bar button {
@@ -54,28 +85,10 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .search-bar button:hover {
-  background-color: #16a085;
-}
-
-/* Button to Reopen Search */
-.open-search-button {
-  display: none;
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background-color: #1abc9c;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.open-search-button:hover {
   background-color: #16a085;
 }
 
@@ -157,10 +170,10 @@ body {
 }
 
 .chart-display {
-  margin-top: 120px; /* NEW: safely below the fixed top button row */
+  margin-top: 120px;
   padding: 10px;
   overflow-y: auto;
-  max-height: calc(100vh - 160px); /* adjust height to avoid overflow */
+  max-height: calc(100vh - 160px);
 }
 
 .chart-item {
@@ -173,53 +186,6 @@ body {
 .chart-item h4 {
   margin: 10px 0;
   font-size: 16px;
-}
-
-.chart-button {
-  display: block;
-  width: calc(100% - 20px); /* full width minus padding */
-  margin: 10px;
-  padding: 12px 15px;
-  background-color: #34495e;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  text-align: left;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.chart-button:hover {
-  background-color: #1abc9c;
-}
-
-/* PDF Viewer */
-.pdf-viewer {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 360px; /* ← was 350px */
-  width: calc(100% - 360px); /* ← was 100% - 350px */
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-}
-
-.close-pdf {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.close-pdf:hover {
-  background-color: #c0392b;
 }
 
 .chart-button {
@@ -241,13 +207,6 @@ body {
   background-color: #1abc9c;
 }
 
-.chart-display {
-  margin-top: 10px;
-  padding: 10px;
-  overflow-y: auto;
-  max-height: calc(100vh - 160px);
-}
-
 .chart-display-gen-gnd {
   margin-top: 120px;
   padding: 10px;
@@ -255,46 +214,78 @@ body {
   max-height: calc(100vh - 160px);
 }
 
+/* PDF Viewer */
 .pdf-viewer {
   display: none;
   position: fixed;
-  top: 0;
-  left: 360px;
-  width: calc(100% - 360px);
-  height: 100%;
+  top: 60px; /* Aligns with header bottom */
+  left: 370px; /* Increased from 360px to avoid overlap */
+  width: calc(100% - 370px); /* Adjusted to match left value */
+  height: calc(100% - 60px); /* Fills remaining space below header */
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 1000;
 }
 
+.close-pdf {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-pdf:hover {
+  background-color: #c0392b;
+}
+
 .nav-button.disabled {
-  background-color: #7f8c8d !important; /* grey tone */
+  background-color: #7f8c8d !important;
   color: #ccc;
   cursor: not-allowed;
   opacity: 0.6;
-  pointer-events: none; /* ensures it's completely unclickable */
+  pointer-events: none;
 }
 
 .nav-button.disabled:hover {
   background-color: #7f8c8d !important;
 }
 
-/* Bottom-left Credits Button */
-.credits-button {
+/* Bottom-right buttons */
+.action-button {
   position: fixed;
   bottom: 15px;
-  left: 15px;
+  right: 15px;
   background-color: #1abc9c;
   color: white;
   border: none;
-  padding: 10px 16px;
-  font-size: 14px;
-  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
   cursor: pointer;
   z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s;
 }
 
-.credits-button:hover {
+.action-button:hover {
   background-color: #16a085;
+}
+
+.discord-button {
+  right: 80px;
+  background-color: #7289da;
+}
+
+.discord-button:hover {
+  background-color: #5b6eae;
 }
 
 /* Centered, scrollable modal-style credits panel */
@@ -352,3 +343,73 @@ body {
   background-color: #c0392b;
 }
 
+/* Light Mode Overrides */
+body.light-mode {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+body.light-mode .header,
+body.light-mode .search-bar,
+body.light-mode .sidebar,
+body.light-mode .dropdown-container,
+body.light-mode .nav-button,
+body.light-mode .action-button {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+body.light-mode .nav-button:hover,
+body.light-mode .chart-button:hover,
+body.light-mode .action-button:hover {
+  background-color: #ccc;
+}
+
+body.light-mode .disabled {
+  background-color: #bbb !important;
+  color: #777;
+}
+body.light-mode .button-row {
+  background-color: transparent;
+}
+
+body.light-mode .chart-button {
+  background-color: #d1d1d1;
+  color: #111;
+}
+
+body.light-mode .chart-button:hover {
+  background-color: #bcbcbc;
+}
+
+body.light-mode .nav-button.selected {
+  background-color: #aaa !important;
+}
+
+body.light-mode .website-title h1 {
+  color: #000;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  margin-top: auto;
+  padding: 15px 10px;
+  text-align: center;
+  color: #ccc;
+  font-size: 14px;
+  font-weight: bold; /* Added bold */
+  border-top: none; /* Removed border */
+  background-color: transparent !important; /* Removed background */
+}
+
+/* Light mode sidebar footer */
+body.light-mode .sidebar-footer {
+  background-color: #e0e0e0;
+  color: #333;
+  border-top: 1px solid #bbb;
+}
+
+body.light-mode .discord-button {
+  background-color: #7289da;
+  color: white;
+}
