@@ -9,20 +9,25 @@
 </head>
 <body>
 
-  <!-- Website Title -->
-  <div class="website-title">
-    <h1>24SmartCharts</h1>
-  </div>
-
-  <!-- Header with Airport Display -->
+  <!-- Unified Header -->
   <div class="header">
-    <div id="current-airport-display" style="display: none;">No Airport Selected</div>
-  </div>
-
-  <!-- Search Bar -->
-  <div class="search-bar" id="search-bar">
-    <input type="text" id="airport-input" placeholder="Enter airport code (e.g., IRFD)">
-    <button onclick="loadCharts()"><i class="fas fa-search"></i> Search</button>
+    <div class="header-content">
+      <div class="website-title">
+        <h1>24SmartCharts</h1>
+      </div>
+      
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Enter airport code (e.g., IRFD)">
+        <button id="search-button" onclick="loadCharts()"><i class="fas fa-search"></i> Search</button>
+      </div>
+      
+      <div class="right-side-header">
+        <div id="current-airport-display"></div>
+        <button id="toggle-search" class="icon-button">
+          <i class="fa-solid fa-plane-departure"></i>
+        </button>
+      </div>      
+    </div>
   </div>
 
   <!-- Sidebar -->
@@ -76,7 +81,6 @@
     <i class="fas fa-adjust"></i>
   </button>
 
-  <!-- Credits Button -->
   <button id="credits-toggle" class="action-button" style="right: 145px;">
     <i class="fas fa-info-circle"></i>
   </button>
@@ -100,6 +104,7 @@
         <li>Chart for the following Airports where used in one way or another are made by <b>AeroNav</b>. The name is clearly listed on the dropdown of different airports and the titles of the chartbuttons on others: 
         ISAU, IGRV, ITKO, IPPH, IIAB, IPAP, ILAR, IBTH, IRFD, IMLR.</li>
         <li>ILAR Charts where made by VilleTheDude and Willek10</li>
+        <li>IDCS Charts where made by MRGEARZ</li>
       </ul>
     </div>
   </div>

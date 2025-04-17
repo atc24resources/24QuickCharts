@@ -684,13 +684,12 @@ const chartData = {
   }
 };
 
-// Global variables
 let currentAirport = '';
 let currentChartType = '';
 let currentAuthor = '';
 
 function loadCharts() {
-  currentAirport = document.getElementById("airport-input").value.toUpperCase();
+  currentAirport = document.getElementById("search-input").value.toUpperCase();
 
   if (chartData[currentAirport]) {
     document.getElementById("sidebar").style.display = "flex";
@@ -708,11 +707,9 @@ function loadCharts() {
       const data = chartData[currentAirport][type];
 
       if (!data || (data.authors && Object.keys(data.authors).length === 0)) {
-        // Disable button
         btn.classList.add('disabled');
         btn.disabled = true;
       } else {
-        // Enable button
         btn.classList.remove('disabled');
         btn.disabled = false;
       }
@@ -820,6 +817,7 @@ function displayAuthorCharts() {
 }
 
 function openPdf(pdfUrl) {
+  if (!pdfUrl) return;
   const pdfViewer = document.getElementById("pdf-viewer");
   const pdfIframe = document.getElementById("pdf-iframe");
   pdfIframe.src = pdfUrl;
@@ -831,15 +829,12 @@ function closePdfViewer() {
 }
 
 function minimizeSearch() {
-  const searchBar = document.getElementById("search-bar");
-  searchBar.classList.add("minimized");
-  document.getElementById("current-airport-display").style.display = "block";
+  document.querySelector('.header').classList.add('search-hidden');
 }
 
 function openSearch() {
-  const searchBar = document.getElementById("search-bar");
-  searchBar.classList.remove("minimized");
-  document.getElementById("current-airport-display").style.display = "none";
+  document.querySelector('.header').classList.remove('search-hidden');
+  document.getElementById("search-input").focus();
 }
 
 function toggleCredits(show) {
@@ -847,11 +842,16 @@ function toggleCredits(show) {
   overlay.style.display = show ? "block" : "none";
 }
 
-document.getElementById("credits-toggle").addEventListener("click", () => {
-  toggleCredits(true);
-});
+// Event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("credits-toggle").addEventListener("click", () => {
+    toggleCredits(true);
+  });
 
-// Theme Toggle
-document.getElementById("theme-toggle").addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+  });
+
+  document.getElementById("toggle-search").addEventListener("click", openSearch);
+
 });

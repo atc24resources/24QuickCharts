@@ -7,92 +7,91 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.website-title {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 1000;
-}
-
-.website-title h1 {
-  margin: 0;
-  font-size: 32px;
-  color: white;
-}
-
-/* Header */
+/* Header Styles */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 15px 0;
-  text-align: center;
+  height: 60px;
   background-color: #2c3e50;
-  z-index: 999;
+  z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
 }
 
-#current-airport-display {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0 auto;
-}
-
-/* Search Bar */
-.search-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  padding: 15px 0;
-  text-align: center;
-  background-color: #2c3e50;
-  z-index: 999;
+  padding: 0 20px;
+}
+
+.website-title {
+  flex: 1;
+  min-width: 200px;
+}
+
+.website-title h1 {
+  margin: 0;
+  font-size: 24px;
+  color: white;
+}
+
+.search-container {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.search-bar.minimized {
-  transform: translateY(-100%);
-}
-
-.search-bar.minimized input {
-  display: none;
-}
-
-/* Search Bar */
-.search-bar.minimized button {
-  position: fixed;
-  top: 10px;
-  right: 10px; /* Changed from left to right */
-  z-index: 1001;
-}
-
-.search-bar input {
-  padding: 10px;
-  font-size: 16px;
+.search-container input {
+  padding: 8px 12px;
+  width: 300px;
+  max-width: 100%;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   margin-right: 10px;
+  font-size: 16px;
 }
 
-.search-bar button {
-  padding: 10px 20px;
-  font-size: 16px;
+.search-container button {
+  padding: 8px 16px;
   background-color: #1abc9c;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
-.search-bar button:hover {
+.search-container button:hover {
   background-color: #16a085;
 }
 
-/* Sidebar */
+#current-airport-display {
+  flex: 2;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  display: none;
+  cursor: pointer;
+}
+
+/* Hidden search state */
+.search-hidden .search-container {
+  display: none;
+}
+
+.search-hidden #current-airport-display {
+  display: block;
+}
+
+/* Sidebar Styles */
 .sidebar {
   display: none;
   flex-direction: column;
@@ -106,13 +105,12 @@ body {
   z-index: 998;
 }
 
-/* Button Row */
 .button-row {
   display: flex;
   justify-content: space-between;
   position: fixed;
   top: 60px;
-  left: 0px;
+  left: 0;
   width: 350px;
   background-color: #2c3e50;
   padding: 10px;
@@ -152,7 +150,6 @@ body {
   background-color: var(--selected-color);
 }
 
-/* Dropdown container */
 .dropdown-container {
   margin-top: 120px;
   padding: 10px;
@@ -169,23 +166,12 @@ body {
   color: white;
 }
 
-.chart-display {
+/* Chart Display Styles */
+.chart-display, .chart-display-gen-gnd {
   margin-top: 120px;
   padding: 10px;
   overflow-y: auto;
   max-height: calc(100vh - 160px);
-}
-
-.chart-item {
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #34495e;
-  border-radius: 5px;
-}
-
-.chart-item h4 {
-  margin: 10px 0;
-  font-size: 16px;
 }
 
 .chart-button {
@@ -207,21 +193,14 @@ body {
   background-color: #1abc9c;
 }
 
-.chart-display-gen-gnd {
-  margin-top: 120px;
-  padding: 10px;
-  overflow-y: auto;
-  max-height: calc(100vh - 160px);
-}
-
-/* PDF Viewer */
+/* PDF Viewer Styles */
 .pdf-viewer {
   display: none;
   position: fixed;
-  top: 60px; /* Aligns with header bottom */
-  left: 370px; /* Increased from 360px to avoid overlap */
-  width: calc(100% - 370px); /* Adjusted to match left value */
-  height: calc(100% - 60px); /* Fills remaining space below header */
+  top: 60px;
+  left: 370px;
+  width: calc(100% - 350px);
+  height: calc(100% - 60px);
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 1000;
 }
@@ -234,7 +213,7 @@ body {
   color: white;
   border: none;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 2px;
   cursor: pointer;
 }
 
@@ -242,6 +221,7 @@ body {
   background-color: #c0392b;
 }
 
+/* Button States */
 .nav-button.disabled {
   background-color: #7f8c8d !important;
   color: #ccc;
@@ -254,7 +234,7 @@ body {
   background-color: #7f8c8d !important;
 }
 
-/* Bottom-right buttons */
+/* Action Buttons */
 .action-button {
   position: fixed;
   bottom: 15px;
@@ -288,7 +268,17 @@ body {
   background-color: #5b6eae;
 }
 
-/* Centered, scrollable modal-style credits panel */
+/* Sidebar Footer */
+.sidebar-footer {
+  margin-top: auto;
+  padding: 15px 10px;
+  text-align: center;
+  color: #ccc;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Credits Modal */
 .credits-overlay {
   display: none;
   position: fixed;
@@ -307,7 +297,6 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* Inner content stays within panel */
 .credits-content {
   max-width: 100%;
   margin: 0;
@@ -325,7 +314,6 @@ body {
   line-height: 1.6;
 }
 
-/* X Close Button */
 .close-credits {
   position: absolute;
   top: 12px;
@@ -343,14 +331,13 @@ body {
   background-color: #c0392b;
 }
 
-/* Light Mode Overrides */
+/* Light Mode Styles */
 body.light-mode {
   background-color: #f4f4f4;
   color: #333;
 }
 
 body.light-mode .header,
-body.light-mode .search-bar,
 body.light-mode .sidebar,
 body.light-mode .dropdown-container,
 body.light-mode .nav-button,
@@ -369,6 +356,7 @@ body.light-mode .disabled {
   background-color: #bbb !important;
   color: #777;
 }
+
 body.light-mode .button-row {
   background-color: transparent;
 }
@@ -390,26 +378,37 @@ body.light-mode .website-title h1 {
   color: #000;
 }
 
-/* Sidebar Footer */
-.sidebar-footer {
-  margin-top: auto;
-  padding: 15px 10px;
-  text-align: center;
-  color: #ccc;
-  font-size: 14px;
-  font-weight: bold; /* Added bold */
-  border-top: none; /* Removed border */
-  background-color: transparent !important; /* Removed background */
-}
-
-/* Light mode sidebar footer */
 body.light-mode .sidebar-footer {
-  background-color: #e0e0e0;
   color: #333;
-  border-top: 1px solid #bbb;
 }
 
 body.light-mode .discord-button {
   background-color: #7289da;
   color: white;
+}
+
+#current-airport-display {
+  display: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.right-side-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+.icon-button:hover {
+  color: #1abc9c;
 }
