@@ -19,7 +19,7 @@ const chartData = {
 
     ],
     GND: [
-      { name: "Airport Diagram from PTFS.xyz/chart ", pdf: "charts/ISAU/GND/ISAU Ground Chart.pdf" }
+      { name: "Airport Diagram from <b>PTFS.xyz/chart</b>", pdf: "charts/ISAU/GND/ISAU Ground Chart.pdf" }
     ],
     SID: {
       authors: {
@@ -172,7 +172,7 @@ const chartData = {
   IGRV: {
     GEN: [
       { name: "General Information by <b>AeroNav</b>", pdf: "charts/IGRV/GEN/GENERAL INFOR.pdf" },
-      { name: "Controll Zone Chart by <b>FormicAcid</b>", pdf: "charts/IGRV/GEN/FORMIC/CONTROLLZONE CHART.pdf" }
+      { name: "Control Zone Chart by <b>FormicAcid</b>", pdf: "charts/IGRV/GEN/FORMIC/CONTROLLZONE CHART.pdf" }
     ],
     GND: [
       { name: "Airport Diagram from <b>PFTS.xyz/chart</b>", pdf: "charts/IGRV/GND/IGRV Ground Chart.pdf" }
