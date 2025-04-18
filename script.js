@@ -398,7 +398,7 @@ const chartData = {
   },
   IPPH: {
     GEN: [
-      { name: "General Airport Information by <b>AeroNav</b>", pdf: "charts/IPPH/GEN/GENERAL INFORMATION.pdf" },
+      { name: "General Information by <b>AeroNav</b>", pdf: "charts/IPPH/GEN/GENERAL INFORMATION.pdf" },
       { name: "Runway Information by <b>AeroNav</b>", pdf: "charts/IPPH/GEN/RUNWAY INFORMATION.pdf" },
 
       { name: "Airport Briefing by <b>Natto, userwastaken, Nikita39Gamer</b>", pdf: "charts/IPPH/GEN/Natto, userwastaken, Nikita39Gamer/Airport Briefing.pdf" },
@@ -418,7 +418,7 @@ const chartData = {
         "AeroNav": [
           { name: "CAMEL1 RNAV", pdf: "charts/IPPH/SID/AeroNav/CAMEL1 RNAV.pdf" },
           { name: "DINER1 RNAV", pdf: "charts/IPPH/SID/AeroNav/CAMEL1 RNAV.pdf" },
-          { name: "PERTH1 - PER1", pdf: "charts/IPPH/SID/AeroNav/PERTH1 (PER1).pdf" }
+          { name: "PERTH1 - (PER1)", pdf: "charts/IPPH/SID/AeroNav/PERTH1 (PER1).pdf" }
         ],
         "Natto, userwastaken, Nikita39Gamer": [
           { name: "CAMEL1A RNAV RWY 11", pdf: "charts/IPPH/SID/Natto, userwastaken, Nikita39Gamer/CAMEL1A RNAV RWY 11.pdf" },
@@ -472,8 +472,8 @@ const chartData = {
           { name: "LDA-Y RWY 29", pdf: "charts/IPPH/APP/AeroNav/LDA-Y RWY29.pdf" },
           { name: "LDA-Z RWY 29", pdf: "charts/IPPH/APP/AeroNav/LDA-Z RWY29.pdf" },
           { name: "RNP Y RWY 29", pdf: "charts/IPPH/APP/AeroNav/RNP Z RWY29.pdf" },
-          { name: "HAVEN STACKS VISUAL 29/33 ", pdf: "charts/IPPH/APP/AeroNav/HAVEN STACKS VISUAL RWY29_33.pdf" },
-          { name: "HAVEN ISLAND VISUAL 29/33 ", pdf: "charts/IPPH/APP/AeroNav/HAVEN ISLAND VISUAL RWY29_33.pdf" }
+          { name: "HAVEN STACKS VISUAL 29/33", pdf: "charts/IPPH/APP/AeroNav/HAVEN STACKS VISUAL RWY29_33.pdf" },
+          { name: "HAVEN ISLAND VISUAL 29/33", pdf: "charts/IPPH/APP/AeroNav/HAVEN ISLAND VISUAL RWY29_33.pdf" }
         ],
         "Natto, userwastaken, Nikita39Gamer": [
           { name: "ILS or LOC X RWY 11", pdf: "charts/IPPH/APP/Natto, userwastaken, Nikita39Gamer/ILS or LOC X RWY 11.pdf" },
