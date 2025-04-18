@@ -1194,7 +1194,7 @@ const chartData = {
           { name: "RNAV (RNP) 7L", pdf: "charts/IRFD/APP/AeroNav/RNAVRNP7L.pdf" },
           { name: "RNAV (RNP) 7C", pdf: "charts/IRFD/APP/AeroNav/RNAVRNP7C.pdf" },
           { name: "RNAV (RNP) 7R", pdf: "charts/IRFD/APP/AeroNav/RNAVRNP7R.pdf" },
-          { name: "VOR or GPS 7L/C/R", pdf: "charts/IRFD/APP/AeroNav/VORRWY7L:C.pdf" },
+          { name: "VOR or GPS 7L/C/R", pdf: "charts/IRFD/APP/AeroNav/VORRWY7L_C.pdf" },
           { name: "RIVER PASS VISUAL 7L/C/R", pdf: "charts/IRFD/APP/AeroNav/RIVERPASSVISUALRWY7S.pdf" },
           { name: "DYNAMIX VALLEY VISUAL 7L/C/R", pdf: "charts/IRFD/APP/AeroNav/DYNAMIXVALLEYVISUAL7S.pdf" }
         ],
