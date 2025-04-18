@@ -225,7 +225,7 @@ const chartData = {
   },
   ITKO: {
     GEN: [
-      { name: "VRF Sectional by <b>AeroNav</b>", pdf: "charts/ITKO/GEN/AeroNav/VFR SECTIONAL.pdf" },
+      { name: "VRF Sectional Chart by <b>AeroNav</b>", pdf: "charts/ITKO/GEN/AeroNav/VFR SECTIONAL.pdf" },
       { name: "De-Icing Procedures by <b>AeroNav</b>", pdf: "charts/ITKO/GEN/AeroNav/De-Icing Pro.pdf" },
 
       { name: "Airport Briefing by <b>userwastaken, nikita39gamer</b>", pdf: "charts/ITKO/GEN/userwastaken, nikita39gamer/Airport Briefing.pdf" },
@@ -247,7 +247,7 @@ const chartData = {
           { name: "ONDER1 RNAV", pdf: "charts/ITKO/SID/AeroNav/ONDER1 RNAV.pdf" },
           { name: "TOKYO1", pdf: "charts/ITKO/SID/AeroNav/TOKYO1.pdf" }
         ],
-        "AeroNav": [
+        "userwastaken, nikita39gamer": [
           { name: "BLANK1W RWY 02", pdf: "charts/ITKO/SID/userwastaken, nikita39gamer/BLANK1W RWY 02.pdf" },
           { name: "BLANK1X RWY 13", pdf: "charts/ITKO/SID/userwastaken, nikita39gamer/BLANK1X RWY 13.pdf" },
           { name: "BLANK1X RWY 13", pdf: "charts/ITKO/SID/userwastaken, nikita39gamer/BLANK1Y RWY 20.pdf" },
