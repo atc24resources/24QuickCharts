@@ -189,7 +189,7 @@ const chartData = {
         "FormicAcid": [
           { name: "BLANK1K RNAV ", pdf: "charts/IGRV/SID/FORMIC/BLANK1K.pdf" },
           { name: "BLANK1L RNAV", pdf: "charts/IGRV/SID/FORMIC/BLANK1L.pdf" },
-          { name: "THACC1K RNAV", pdf: "charts/IGRV/SID/THENR3 RNAV.pdf" }
+          { name: "THACC1K RNAV", pdf: "charts/IGRV/SID/FORMIC/THACC1K.pdf" }
           
         ]
       }
