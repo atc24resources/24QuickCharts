@@ -3,13 +3,13 @@ const chartData = {
   ISAU: {
     GEN: [
       { name: "General Information by <b>AeroNav</b>", pdf: "charts/ISAU/GEN/AeroNav/General Information.pdf" },
-      { name: "De-Icing procedures by <b>AeroNav</b>", pdf: "charts/ISAU/GEN/AeroNav/De-Icing Prodecuders.pdf" },
-      { name: "Suggested Departures and Arrival by <b>AeroNav</b>", pdf: "charts/ISAU/GEN/AeroNav/Suggested STAR and SID.pdf" },
+      { name: "De-Icing Procedures by <b>AeroNav</b>", pdf: "charts/ISAU/GEN/AeroNav/De-Icing Prodecuders.pdf" },
+      { name: "Suggested Departures and Arrivals by <b>AeroNav</b>", pdf: "charts/ISAU/GEN/AeroNav/Suggested STAR and SID.pdf" },
       { name: "General Information by <b>AeroNav</b>", pdf: "charts/ISAU/GEN/AeroNav/General Information.pdf" },
 
       { name: "Airport Procedures by <b>PlutonFordo</b>", pdf: "charts/ISAU/GEN/PlutonFordo/Airports Procedures.pdf" },
       { name: "Airport Procedures CONT by <b>PlutonFordo</b>", pdf: "charts/ISAU/GEN/PlutonFordo/Airports Procedures CONT.pdf" },
-      { name: "VFR Chart by <b>PlutonFordo</b>", pdf: "charts/ISAU/GEN/PlutonFordo/VFR Chart.pdf" },
+      { name: "VFR Sectional Chart by <b>PlutonFordo</b>", pdf: "charts/ISAU/GEN/PlutonFordo/VFR Chart.pdf" },
 
       { name: "Airport Briefing by <b>userwastaken, Nikita39Gamer</b>", pdf: "charts/ISAU/GEN/userwastaken, Nikita39Gamer/Airport Briefing.pdf" },
       { name: "Airport Briefing CONT by <b>userwastaken, Nikita39Gamer</b>", pdf: "charts/ISAU/GEN/userwastaken, Nikita39Gamer/Airport Briefing CONT.pdf" },
@@ -24,11 +24,11 @@ const chartData = {
     SID: {
       authors: {
         "AeroNav": [
-          { name: "BORDER1 - (BRDR1) ", pdf: "charts/ISAU/SID/BORDER1 (BRDR1).pdf" },
-          { name: "ECHHO1 - (ECCHO1)", pdf: "charts/ISAU/SID/ECHHO1 (ECCHO1).pdf" },
-          { name: "SAUTHEMPTONA1 - (SAU1)", pdf: "charts/ISAU/SID/SAUTHEMPTONA 1 (SAU1).pdf" },
-          { name: "SAYOW1 RNAV", pdf: "charts/ISAU/SID/SAYOW1 RNAV.pdf" },
-          { name: "ZZOOO1 RNAV", pdf: "charts/ISAU/SID/ZZOOO1 RNAV.pdf" }
+          { name: "BORDER1 - (BRDR1) ", pdf: "charts/ISAU/SID/AeroNav/BORDER1 (BRDR1).pdf" },
+          { name: "ECHHO1 - (ECCHO1)", pdf: "charts/ISAU/SID/AeroNav/ECHHO1 (ECCHO1).pdf" },
+          { name: "SAUTHEMPTONA1 - (SAU1)", pdf: "charts/ISAU/SID/AeroNav/SAUTHEMPTONA 1 (SAU1).pdf" },
+          { name: "SAYOW1 RNAV", pdf: "charts/ISAU/SID/AeroNav/SAYOW1 RNAV.pdf" },
+          { name: "ZZOOO1 RNAV", pdf: "charts/ISAU/SID/AeroNav/ZZOOO1 RNAV.pdf" }
         ],
         "PlutonFordo": [
           { name: "ALDER1D RNAV RWY 08", pdf: "charts/ISAU/SID/PlutonFordo/ALDER1D RNAV RWY 08.pdf" },
