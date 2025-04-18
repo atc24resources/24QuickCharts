@@ -1134,10 +1134,10 @@ const chartData = {
   },
   IRFD: {
     GEN: [
-      { name: "IRFD General Information by <b>AeroNav</b>", pdf: "charts/IRFD/GEN/IRFD General Info.pdf" },
+      { name: "General Information by <b>AeroNav</b>", pdf: "charts/IRFD/GEN/IRFD General Info.pdf" },
       { name: "Obstacale Notes - Noise Abatement by <b>AeroNav</b>", pdf: "charts/IRFD/GEN/Obstacale Notes - Noise Abatement.pdf" },
       { name: "Departure and Arrival Suggestions by <b>AeroNav</b>", pdf: "charts/IRFD/GEN/STARSIDSuggestion.pdf" },
-      { name: "VFR Sectional Chart Rockford by <b>AeroNav</b>", pdf: "charts/IRFD/GEN/VFR Sectional Chart.pdf" }
+      { name: "VFR Sectional Chart by <b>AeroNav</b>", pdf: "charts/IRFD/GEN/VFR Sectional Chart.pdf" }
     ],
     GND: [
       { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IRFD/GND/IRFD Ground Chart.pdf" }
@@ -1149,19 +1149,19 @@ const chartData = {
           { name: "KENED2 RNAV", pdf: "charts/IRFD/SID/AeroNav/KENED2 RNAV.pdf" },
           { name: "LOGAN4 RNAV", pdf: "charts/IRFD/SID/AeroNav/LOGAN4 RNAV.pdf" },
           { name: "OSHNN1 RNAV", pdf: "charts/IRFD/SID/AeroNav/OSHNN1 RNAV.pdf" },
-          { name: "ROCKFORD6 - RFD6", pdf: "charts/IRFD/SID/AeroNav/ROCKFORD6 (RFD6).pdf" },
-          { name: "TRAINING1 RNAV - TRN1", pdf: "charts/IRFD/SID/AeroNav/TRAINING1 RNAV (TRN1).pdf" },
+          { name: "ROCKFORD 6 - (RFD6)", pdf: "charts/IRFD/SID/AeroNav/ROCKFORD6 (RFD6).pdf" },
+          { name: "TRAINING 1 RNAV - (TRN1)", pdf: "charts/IRFD/SID/AeroNav/TRAINING1 RNAV (TRN1).pdf" },
           { name: "WNNDY3 RNAV", pdf: "charts/IRFD/SID/AeroNav/WNNDY3 RNAV.pdf" }
         ],
         "p1anez_planes": [
-          { name: "DARRK3 RNAV", pdf: "charts/IRFD/SID/p1anez_planes/ANYMS1A.pdf" },
-          { name: "KENED2 RNAV", pdf: "charts/IRFD/SID/p1anez_planes/ANYMS2A.pdf" },
-          { name: "LOGAN4 RNAV", pdf: "charts/IRFD/SID/p1anez_planes/BEANS1A.pdf" },
-          { name: "OSHNN1 RNAV", pdf: "charts/IRFD/SID/p1anez_planes/BEANS2A.pdf" },
-          { name: "ROCKFORD6 - RFD6", pdf: "charts/IRFD/SID/p1anez_planes/KENED1A.pdf" },
-          { name: "TRAINING1 RNAV - TRN1", pdf: "charts/IRFD/SID/p1anez_planes/KENED2A.pdf" },
-          { name: "WNNDY3 RNAV", pdf: "charts/IRFD/SID/p1anez_planes/LAZER1A.pdf" },
-          { name: "WNNDY3 RNAV", pdf: "charts/IRFD/SID/p1anez_planes/LAZER2A.pdf" }
+          { name: "ANYMS1A", pdf: "charts/IRFD/SID/p1anez_planes/ANYMS1A.pdf" },
+          { name: "ANYMS2A", pdf: "charts/IRFD/SID/p1anez_planes/ANYMS2A.pdf" },
+          { name: "BEANS1A", pdf: "charts/IRFD/SID/p1anez_planes/BEANS1A.pdf" },
+          { name: "BEANS2A", pdf: "charts/IRFD/SID/p1anez_planes/BEANS2A.pdf" },
+          { name: "KENED1A", pdf: "charts/IRFD/SID/p1anez_planes/KENED1A.pdf" },
+          { name: "KENED2A", pdf: "charts/IRFD/SID/p1anez_planes/KENED2A.pdf" },
+          { name: "LAZER1A", pdf: "charts/IRFD/SID/p1anez_planes/LAZER1A.pdf" },
+          { name: "LAZER2A", pdf: "charts/IRFD/SID/p1anez_planes/LAZER2A.pdf" }
         ]
       }
     },
@@ -1179,7 +1179,7 @@ const chartData = {
           { name: "WILEK1", pdf: "charts/IRFD/STAR/AeroNav/WILEK1.pdf" }
         ],
         "p1anez_planes": [
-          { name: "CLEARANCE1(CLR1)", pdf: "charts/IRFD/STAR/p1anez_planes/CLEARANCE1(CLR1).pdf" },
+          { name: "CLEARANCE1 - (CLR1)", pdf: "charts/IRFD/STAR/p1anez_planes/CLEARANCE1(CLR1).pdf" },
           { name: "INDEX4A", pdf: "charts/IRFD/STAR/p1anez_planes/INDEX4A.pdf" }
         ]
       }
