@@ -208,7 +208,7 @@ body {
 .close-pdf {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 25px;
   background-color: #e74c3c;
   color: white;
   border: none;
