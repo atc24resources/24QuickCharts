@@ -412,3 +412,117 @@ body.light-mode .discord-button {
 .icon-button:hover {
   color: #1abc9c;
 }
+
+
+/* Add to styles.css */
+#pinned-toggle {
+  right: 215px;
+}
+
+/* Add to styles.css */
+.pin-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s;
+}
+
+.pin-icon-container {
+  width: 24px;
+  text-align: center;
+}
+
+/* Add to styles.css */
+.chart-button {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.chart-name {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.chart-button:hover .pin-icon {
+  color: #f39c12;
+}
+
+.chart-button .pin-icon.pinned {
+  color: #f39c12;
+}
+
+.pinned-tabs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.pinned-tab {
+  padding: 8px 15px;
+  background-color: #34495e;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.pinned-tab:hover {
+  background-color: #1abc9c;
+}
+
+.pinned-tab.active {
+  background-color: #1abc9c;
+  font-weight: bold;
+}
+
+.pinned-author-group {
+  margin-bottom: 20px;
+  background-color: rgba(52, 73, 94, 0.3);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.pinned-author-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1abc9c;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #1abc9c;
+}
+
+.pinned-chart-item {
+  padding: 8px 15px;
+  margin-bottom: 5px;
+  background-color: #34495e;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pinned-chart-item:hover {
+  background-color: #1abc9c;
+}
+
+.unpin-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  padding: 0 5px;
+  font-size: 14px;
+}
+
+.unpin-btn:hover {
+  color: #c0392b;
+}

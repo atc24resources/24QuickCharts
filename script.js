@@ -1483,3 +1483,243 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("toggle-search").addEventListener("click", openSearch);
 
 });
+
+
+// Add these functions to script.js
+
+// Toggle pinned charts overlay
+function togglePinned(show) {
+  const overlay = document.getElementById("pinned-overlay");
+  overlay.style.display = show ? "block" : "none";
+  if (show) {
+    displayPinnedCharts();
+  }
+}
+
+function displayPinnedCharts(airportFilter = null) {
+  const pinnedCharts = getPinnedCharts();
+  const container = document.getElementById("pinned-charts-container");
+  const tabsContainer = document.getElementById("pinned-tabs");
+  
+  container.innerHTML = "";
+  tabsContainer.innerHTML = "";
+
+  if (!pinnedCharts || pinnedCharts.length === 0) {
+    container.innerHTML = "<p>No charts pinned yet</p>";
+    return;
+  }
+
+  // Create airport tabs
+  const airports = [...new Set(pinnedCharts.map(chart => chart.airport))];
+  if (airports.length > 1) {
+    // Add "All" tab
+    const allTab = document.createElement('div');
+    allTab.className = `pinned-tab ${!airportFilter ? 'active' : ''}`;
+    allTab.textContent = "All";
+    allTab.onclick = () => displayPinnedCharts();
+    tabsContainer.appendChild(allTab);
+
+    // Add airport tabs
+    airports.forEach(airport => {
+      const tab = document.createElement('div');
+      tab.className = `pinned-tab ${airportFilter === airport ? 'active' : ''}`;
+      tab.textContent = airport;
+      tab.onclick = () => displayPinnedCharts(airport);
+      tabsContainer.appendChild(tab);
+    });
+  }
+
+  // Filter charts by airport if needed
+  const filteredCharts = airportFilter 
+    ? pinnedCharts.filter(chart => chart.airport === airportFilter)
+    : pinnedCharts;
+
+  if (filteredCharts.length === 0) {
+    container.innerHTML = "<p>No charts pinned for this airport</p>";
+    return;
+  }
+
+  // Group by author
+  const groupedByAuthor = {};
+  filteredCharts.forEach(chart => {
+    if (!groupedByAuthor[chart.author]) {
+      groupedByAuthor[chart.author] = [];
+    }
+    groupedByAuthor[chart.author].push(chart);
+  });
+
+  // Display charts
+  for (const [author, charts] of Object.entries(groupedByAuthor)) {
+    const authorGroup = document.createElement('div');
+    authorGroup.className = 'pinned-author-group';
+    
+    const authorTitle = document.createElement('div');
+    authorTitle.className = 'pinned-author-title';
+    authorTitle.textContent = author;
+    authorGroup.appendChild(authorTitle);
+
+    charts.forEach(chart => {
+      const chartItem = document.createElement('div');
+      chartItem.className = 'pinned-chart-item';
+      
+      const chartName = document.createElement('span');
+      chartName.innerHTML = `${chart.name} (${chart.type})`; // Use innerHTML to preserve formatting
+      chartName.onclick = () => {
+        openPdf(chart.pdf);
+        togglePinned(false);
+      };
+      chartItem.appendChild(chartName);
+      
+      const unpinBtn = document.createElement('button');
+      unpinBtn.className = 'unpin-btn';
+      unpinBtn.innerHTML = '<i class="fas fa-times"></i>';
+      unpinBtn.onclick = (e) => {
+        e.stopPropagation();
+        togglePinChart(chart);
+        displayPinnedCharts(airportFilter);
+      };
+      chartItem.appendChild(unpinBtn);
+      
+      authorGroup.appendChild(chartItem);
+    });
+    
+    container.appendChild(authorGroup);
+  }
+}
+// Get pinned charts from localStorage
+function getPinnedCharts() {
+  const pinned = localStorage.getItem('pinnedCharts');
+  return pinned ? JSON.parse(pinned) : [];
+}
+
+// Save pinned charts to localStorage
+function savePinnedCharts(charts) {
+  localStorage.setItem('pinnedCharts', JSON.stringify(charts));
+}
+
+function togglePinChart(chartData) {
+  const pinnedCharts = getPinnedCharts();
+  const index = pinnedCharts.findIndex(chart => 
+    chart.pdf === chartData.pdf && 
+    chart.airport === chartData.airport
+  );
+
+  if (index > -1) {
+    pinnedCharts.splice(index, 1);
+  } else {
+    // Create a clean copy of the chart data without DOM references
+    pinnedCharts.push({
+      pdf: chartData.pdf,
+      name: chartData.name,
+      type: chartData.type,
+      airport: chartData.airport,
+      author: chartData.author
+    });
+  }
+
+  savePinnedCharts(pinnedCharts);
+  updatePinIcons();
+  return index === -1;
+}
+
+// Update pin icons on chart buttons
+function updatePinIcons() {
+  const pinnedCharts = getPinnedCharts();
+  document.querySelectorAll('.chart-button').forEach(button => {
+    const pdf = button.getAttribute('data-pdf');
+    const airport = button.getAttribute('data-airport');
+    const pinIcon = button.querySelector('.pin-icon');
+    
+    const isPinned = pinnedCharts.some(chart => 
+      chart.pdf === pdf && 
+      chart.airport === airport
+    );
+    
+    if (pinIcon) {
+      pinIcon.classList.toggle('pinned', isPinned);
+    }
+  });
+}
+
+function createChartButton(chart, type, airport) {
+  const button = document.createElement('button');
+  button.className = 'chart-button';
+  button.setAttribute('data-pdf', chart.pdf);
+  button.setAttribute('data-airport', airport);
+  button.setAttribute('data-type', type);
+  
+  // Create container for the chart name
+  const nameContainer = document.createElement('span');
+  nameContainer.className = 'chart-name';
+  nameContainer.innerHTML = chart.name; // Preserve HTML formatting
+  
+  // Create pin icon container
+  const pinContainer = document.createElement('span');
+  pinContainer.className = 'pin-icon-container';
+  
+  const pinIcon = document.createElement('i');
+  pinIcon.className = 'far fa-thumbtack pin-icon';
+  pinIcon.onclick = (e) => {
+    e.stopPropagation();
+    togglePinChart({
+      pdf: chart.pdf,
+      name: chart.name,
+      type: type,
+      airport: airport,
+      author: currentAuthor || 'General'
+    });
+  };
+  
+  pinContainer.appendChild(pinIcon);
+  
+  // Append elements to button
+  button.appendChild(nameContainer);
+  button.appendChild(pinContainer);
+  
+  button.onclick = () => openPdf(chart.pdf);
+  return button;
+}
+
+// Update display functions to use createChartButton
+function displayGenGndCharts() {
+  const chartDisplay = document.getElementById("chart-display-gen-gnd");
+  const defaultDisplay = document.getElementById("chart-display-default");
+
+  chartDisplay.style.display = "block";
+  defaultDisplay.style.display = "none";
+  chartDisplay.innerHTML = "";
+
+  const charts = chartData[currentAirport][currentChartType];
+  
+  charts.forEach(chart => {
+    chartDisplay.appendChild(createChartButton(chart, currentChartType, currentAirport));
+  });
+  
+  updatePinIcons();
+  chartDisplay.scrollTop = 0;
+}
+
+function displayAuthorCharts() {
+  const chartDisplay = document.getElementById("chart-display-default");
+  const genGndDisplay = document.getElementById("chart-display-gen-gnd");
+
+  chartDisplay.style.display = "block";
+  genGndDisplay.style.display = "none";
+  chartDisplay.innerHTML = "";
+
+  const charts = chartData[currentAirport][currentChartType].authors[currentAuthor];
+  
+  charts.forEach(chart => {
+    chartDisplay.appendChild(createChartButton(chart, currentChartType, currentAirport));
+  });
+  
+  updatePinIcons();
+  chartDisplay.scrollTop = 0;
+}
+
+// Add event listener for pinned toggle button
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("pinned-toggle").addEventListener("click", () => {
+    togglePinned(true);
+  });
+});
