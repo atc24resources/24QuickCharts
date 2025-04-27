@@ -121,54 +121,6 @@ const chartData = {
       }
     }
   },
-  TVO: {
-    GEN: [
-      { name: "Airport Diagram", pdf: "gen1.pdf" },
-      { name: "General Information", pdf: "gen2.pdf" }
-    ],
-    GND: [
-      { name: "Ground Movement Chart", pdf: "gnd1.pdf" },
-      { name: "Apron Chart", pdf: "gnd2.pdf" }
-    ],
-    SID: {
-      authors: {
-        "Author 1": [
-          { name: "SID Chart 1", pdf: "charts/irfd_sid1.pdf" },
-          { name: "SID Chart 2", pdf: "charts/irfd_sid2.pdf" },
-          { name: "SID Chart 3", pdf: "charts/irfd_sid3.pdf" },
-          { name: "SID Chart 4", pdf: "charts/irfd_sid4.pdf" },
-          { name: "SID Chart 5", pdf: "charts/irfd_sid5.pdf" },
-          { name: "SID Chart 6", pdf: "charts/irfd_sid6.pdf" },
-          { name: "SID Chart 7", pdf: "charts/irfd_sid7.pdf" }
-        ]
-      }
-    },
-    STAR: {
-      authors: {
-        "Author 1": [
-          { name: "STAR Chart 1", pdf: "charts/irfd_sid1.pdf" },
-          { name: "STAR Chart 2", pdf: "charts/irfd_sid2.pdf" },
-          { name: "STAR Chart 3", pdf: "charts/irfd_sid3.pdf" },
-          { name: "STAR Chart 4", pdf: "charts/irfd_sid4.pdf" },
-          { name: "STAR Chart 5", pdf: "charts/irfd_sid5.pdf" },
-          { name: "STAR Chart 6", pdf: "charts/irfd_sid6.pdf" },
-          { name: "STAR Chart 7", pdf: "charts/irfd_sid7.pdf" }
-        ]
-      }
-    },
-    APP: {
-      authors: {
-        "Author 1": [
-          { name: "ILS RWY 08L", pdf: "app1.pdf" },
-          { name: "RNAV RWY 08L", pdf: "app2.pdf" }
-        ],
-        "Author 2": [
-          { name: "VOR RWY 26R", pdf: "app3.pdf" },
-          { name: "LOC RWY 26R", pdf: "app4.pdf" }
-        ]
-      }
-    }
-  },
   IGRV: {
     GEN: [
       { name: "General Information by <b>AeroNav</b>", pdf: "charts/IGRV/GEN/GENERAL INFOR.pdf" },
@@ -576,7 +528,7 @@ const chartData = {
 
     ],
     GND: [
-      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IJAF/GND/IJAF Ground Chart.pdf" }
+      { name: "Airport Diagram by <b>PTFS.xyz</b>", pdf: "charts/IZOL/GND/IZOL Ground Chart.pdf" }
     ],
     SID: {
       authors: {
