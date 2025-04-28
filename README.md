@@ -5,7 +5,7 @@
 ## Features
 
 - **Chart Database**: Store and manage various types of charts.
-- **Fast Search**: Easily search for charts by type, location, or keyword.
+- **Fast Search**: Easily search for charts by airport icao.
 - **Multi-format Support**: Compatible with a variety of chart formats.
 
 ## Installation & Usage
