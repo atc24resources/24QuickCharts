@@ -1,11 +1,11 @@
 # 24QuickCharts
 
-**24QuickCharts** is a chart database for ATC24, designed to store and easily retrieve different types of charts. It allows users to quickly find and view charts, improving efficiency and access.
+**24QuickCharts** is a chart database for ATC24, designed to store and easily retrieve different types of charts. It allows users to find and view charts, improving efficiency and access quickly.
 
 ## Features
 
 - **Chart Database**: Store and manage various types of charts.
-- **Fast Search**: Easily search for charts by airport icao.
+- **Fast Search**: Easily search for airports and then filter by chart type and author.
 - **Multi-format Support**: Compatible with a variety of chart formats.
 
 ## Installation & Usage
@@ -20,7 +20,47 @@
 ## Attribution
 
 - **Creator**: This project was created by [D&H ATC24 Resources](https://github.com/atc24resources).
-- **Chart Sources**: Charts provided by various contributors and sources. Please refer to the chart metadata for attribution details.
+- **Chart Sources**: Charts provided by various contributors and sources. Please refer to the following list for the creators:
+
+# Chart & Project Contributors
+
+- All Ground Charts/Airport Diagrams under the GND button selection are available at [Treelon's GitHub](https://github.com/Treelon/ptfs-charts), and are licensed under the CC BY SA 4.0.
+
+- delt7a & s1ahen – Frontend Scripting
+
+- sweet_kid & sxelent (AeroNav) – Chart Authors
+
+- VilleTheDude – Chart Author
+
+- MRGEARZ – Chart Author
+
+- userwastaken & nikita39gamer – Chart Authors
+
+- Wilek10 – Chart Authors
+
+- Alisoe – Chart Author
+
+- PLUTONFORDO – Chart Author
+
+- GalaxyON_1 – Chart Author
+
+- Natto – Chart Author
+
+- JTV13 – Chart Author
+
+- tiaguinho_2009 – Chart Author
+
+- FormicAcid – Chart Author
+
+- ezydubbs – Chart Author
+
+- Aloha516 – Chart Author
+
+- Greek_dutchman – Chart Author
+
+- Midwest Avgeek – Chart Author
+
+- p1anes – Chart Author
 
 ## License
 
