@@ -1,1 +1,1 @@
-document.getElementById('app-version').textContent = 'v0.0.1-alpha';
+document.getElementById('app-version').textContent = 'v0.1.0-beta';
