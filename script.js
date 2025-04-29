@@ -369,7 +369,7 @@ const chartData = {
       authors: {
         "AeroNav": [
           { name: "CAMEL1 RNAV", pdf: "charts/IPPH/SID/AeroNav/CAMEL1 RNAV.pdf" },
-          { name: "DINER1 RNAV", pdf: "charts/IPPH/SID/AeroNav/CAMEL1 RNAV.pdf" },
+          { name: "DINER1 RNAV", pdf: "charts/IPPH/SID/AeroNav/DINER1 RNAV.pdf" },
           { name: "PERTH1 - (PER1)", pdf: "charts/IPPH/SID/AeroNav/PERTH1 (PER1).pdf" }
         ],
         "Natto, userwastaken, Nikita39Gamer": [
