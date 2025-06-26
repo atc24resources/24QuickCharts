@@ -72,3 +72,6 @@ If you have any questions, feel free to reach out:
 
 - [GitHub](  https://github.com/your-username/24QuickCharts)
 - [Discord](  https://discord.gg/dSJGaRd9Be)
+
+
+We are not in any way shape or form connected to ATC24 or PTFS. We are stand alone and this is made as a third party application with no assosiation with PTFS or ATC24
