@@ -27,6 +27,7 @@ body {
   align-items: center;
   width: 100%;
   padding: 0 20px;
+  position: relative;
 }
 
 .website-title {
@@ -41,21 +42,22 @@ body {
 }
 
 .search-container {
-  flex: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  min-width: 300px;
-  transition: all 0.3s ease;
+  width: 400px; /* Fixed width */
+  max-width: 100%;
 }
 
+
 .search-container input {
+  flex: 1;
   padding: 8px 12px;
-  width: 300px;
-  max-width: 100%;
   border: none;
-  border-radius: 4px;
-  margin-right: 10px;
+  border-radius: 4px 0 0 4px;
   font-size: 16px;
+  min-width: 200px; /* Minimum width */
 }
 
 .search-container button {
@@ -63,10 +65,11 @@ body {
   background-color: #1abc9c;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 0 4px 4px 0;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s;
+  white-space: nowrap;
 }
 
 .search-container button:hover {
@@ -80,6 +83,11 @@ body {
   font-weight: bold;
   display: none;
   cursor: pointer;
+}
+
+/* When search is hidden, adjust layout */
+.search-hidden .website-title {
+  visibility: hidden; /* Hide but maintain space */
 }
 
 /* Hidden search state */
@@ -189,6 +197,16 @@ body {
   transition: background-color 0.3s ease;
 }
 
+/* Centered Airport Code */
+.centered-airport-code {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  display: none; /* Hidden by default */
+}
+
 .chart-button:hover {
   background-color: #1abc9c;
 }
@@ -205,20 +223,24 @@ body {
   z-index: 1000;
 }
 
-.close-pdf {
+.close-pdf,
+.close-credits {
   position: absolute;
   top: 10px;
-  right: 25px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   background-color: #e74c3c;
   color: white;
   border: none;
-  padding: 10px;
-  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-}
-
-.close-pdf:hover {
-  background-color: #c0392b;
+  font-size: 14px;
+  padding: 0;
+  transition: background-color 0.3s;
 }
 
 /* Button States */
@@ -314,19 +336,7 @@ body {
   line-height: 1.6;
 }
 
-.close-credits {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  padding: 8px 10px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-}
-
+.close-pdf:hover,
 .close-credits:hover {
   background-color: #c0392b;
 }
@@ -397,7 +407,9 @@ body.light-mode .discord-button {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-left: auto; /* Push to right */
 }
+
 
 .icon-button {
   background: none;
@@ -525,4 +537,63 @@ body.light-mode .discord-button {
 
 .unpin-btn:hover {
   color: #c0392b;
+}
+
+
+
+
+
+/* Search Results Dropdown */
+.search-results-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #34495e;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  display: none;
+}
+
+.search-result-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #2c3e50;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-result-item:hover {
+  background-color: #1abc9c;
+}
+
+.airport-code {
+  font-weight: bold;
+  color: #1abc9c;
+}
+
+.airport-name {
+  color: #ecf0f1;
+  font-size: 0.9em;
+}
+
+/* Light mode adjustments */
+body.light-mode .search-results-dropdown {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+}
+
+body.light-mode .search-result-item {
+  border-bottom: 1px solid #eee;
+}
+
+body.light-mode .airport-code {
+  color: #16a085;
+}
+
+body.light-mode .airport-name {
+  color: #333;
 }

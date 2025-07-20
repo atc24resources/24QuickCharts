@@ -1,4 +1,29 @@
 // Simplified chart data structure
+const airportDatabase = {
+  "IBAR": "Barra Airport",
+  "IHEN": "Henstridge Airfield",
+  "ILAR": "Larnaca International Airport",
+  "IIAB": "McConnell Air Force Base",
+  "IPAP": "Paphos International Airport",
+  "IGRV": "Grindavik Airport",
+  "IJAF": "Al Najaf Airport",
+  "IZOL": "Izolirani International Airport",
+  "ISCM": "RAF Scampton",
+  "IDCS": "Saba Airport",
+  "ITKO": "Tokyo-Orenji International Airport",
+  "ILKL": "Lukla Airport",
+  "IPPH": "Perth International Airport",
+  "IGAR": "Air Base Garry",
+  "IBLT": "Boltic Airfield",
+  "IRFD": "Greator Rockford International Airport",
+  "IMLR": "Mellor International Airport",
+  "ITRC": "Training Center",
+  "IBTH": "Saint Barthélemy Airport",
+  "IUFO": "UFO Base",
+  "ISAU": "Sauthamptona Airport",
+  "ISKP": "Skopelos Airfield",
+};
+
 const chartData = {
   ISAU: {
     GEN: [
@@ -1269,8 +1294,11 @@ let currentChartType = '';
 let currentAuthor = '';
 
 function loadCharts() {
-  currentAirport = document.getElementById("search-input").value.toUpperCase();
+  const searchInput = document.getElementById("search-input");
+  currentAirport = searchInput.value.trim().toUpperCase();
+  document.getElementById("search-results").style.display = "none";
 
+  // First check if airport exists in chartData (has charts)
   if (chartData[currentAirport]) {
     document.getElementById("sidebar").style.display = "flex";
     
@@ -1280,7 +1308,7 @@ function loadCharts() {
 
     document.getElementById("author-dropdown-container").style.display = "none";
 
-    // Disable/enable nav buttons based on available data for this airport
+    // Disable/enable nav buttons based on available data
     const types = ['GEN', 'GND', 'SID', 'STAR', 'APP'];
     types.forEach(type => {
       const btn = document.querySelector(`.nav-button[onclick="selectButton('${type}')"]`);
@@ -1297,11 +1325,47 @@ function loadCharts() {
 
     minimizeSearch();
     document.getElementById("current-airport-display").innerText = currentAirport;
+    document.getElementById("current-airport-display").style.display = "block";
   } else {
-    alert("Invalid airport code. Please try again.");
+    // Show available airports if code is invalid
+    const availableAirports = Object.keys(chartData).join(", ");
+    alert(`Invalid airport code. Valid codes are:\n${availableAirports}`);
+    searchInput.focus();
   }
 }
 
+// Add this click handler for search suggestions
+document.getElementById("search-input").addEventListener("input", function() {
+  const searchTerm = this.value.trim().toUpperCase();
+  const resultsContainer = document.getElementById("search-results");
+  resultsContainer.innerHTML = "";
+
+  if (searchTerm.length > 0) {
+    const matches = Object.entries(airportDatabase)
+      .filter(([code, name]) => 
+        code.includes(searchTerm) || 
+        name.toUpperCase().includes(searchTerm))
+      .slice(0, 5);
+
+    if (matches.length > 0) {
+      matches.forEach(([code, name]) => {
+        const resultItem = document.createElement("div");
+        resultItem.className = "search-result-item";
+        resultItem.innerHTML = `
+          <span class="airport-code">${code}</span>
+          <span class="airport-name">${name}</span>
+        `;
+        resultItem.addEventListener("click", () => {
+          document.getElementById("search-input").value = code;
+          currentAirport = code; // Set the currentAirport directly
+          loadCharts();
+        });
+        resultsContainer.appendChild(resultItem);
+      });
+      resultsContainer.style.display = "block";
+    }
+  }
+});
 function selectButton(buttonType) {
   currentChartType = buttonType;
   currentAuthor = '';
@@ -1415,6 +1479,7 @@ function minimizeSearch() {
 function openSearch() {
   document.querySelector('.header').classList.remove('search-hidden');
   document.getElementById("search-input").focus();
+  document.getElementById("current-airport-display").style.display = "none";
 }
 
 function toggleCredits(show) {
@@ -1674,4 +1739,64 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("pinned-toggle").addEventListener("click", () => {
     togglePinned(true);
   });
+});
+
+// Add this near your other event listeners
+document.addEventListener('keydown', function(event) {
+  // Check if Enter is pressed and we're not already in the search input
+  if (event.key === 'Enter' && event.target.id !== 'search-input') {
+    // If search is hidden, open it
+    if (document.querySelector('.header').classList.contains('search-hidden')) {
+      openSearch();
+    }
+    // If search is visible and has an airport code, load charts
+    else if (document.getElementById('search-input').value.trim() !== '') {
+      loadCharts();
+    }
+  }
+});
+
+// Show search suggestions
+document.getElementById("search-input").addEventListener("input", function() {
+  const searchTerm = this.value.trim().toUpperCase();
+  const resultsContainer = document.getElementById("search-results");
+  resultsContainer.innerHTML = "";
+
+  if (searchTerm.length > 0) {
+    const matches = Object.entries(airportDatabase)
+      .filter(([code, name]) =>
+        code.includes(searchTerm) || 
+        name.toUpperCase().includes(searchTerm)
+      )
+      .slice(0, 5); // Show max 5 results
+
+    if (matches.length > 0) {
+      matches.forEach(([code, name]) => {
+        const resultItem = document.createElement("div");
+        resultItem.className = "search-result-item";
+        resultItem.innerHTML = `
+          <span class="airport-code">${code}</span>
+          <span class="airport-name">${name}</span>
+        `;
+        resultItem.addEventListener("click", () => {
+          document.getElementById("search-input").value = code;
+          loadCharts();
+          resultsContainer.style.display = "none";
+        });
+        resultsContainer.appendChild(resultItem);
+      });
+      resultsContainer.style.display = "block";
+    } else {
+      resultsContainer.style.display = "none";
+    }
+  } else {
+    resultsContainer.style.display = "none";
+  }
+});
+
+// Close dropdown when clicking elsewhere
+document.addEventListener("click", function(event) {
+  if (!event.target.closest(".search-container")) {
+    document.getElementById("search-results").style.display = "none";
+  }
 });
