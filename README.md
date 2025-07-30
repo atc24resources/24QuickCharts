@@ -73,5 +73,9 @@ If you have any questions, feel free to reach out:
 - [GitHub](  https://github.com/your-username/24QuickCharts)
 - [Discord](  https://discord.gg/dSJGaRd9Be)
 
+## NOTE
+
+As updates only happen every now and then, we cannot assure that charts are completely up to date. Charts will be updated every major update if there are any updates to be made. Make sure to always double check.
+
 
 We are not in any way shape or form connected to ATC24 or PTFS. We are stand alone and this is made as a third party application with no assosiation with PTFS or ATC24
