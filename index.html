@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>24QuickCharts</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24QuickCharts</title>
+    <!-- Add these lines for favicon support -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Existing style links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -19,12 +23,11 @@
       <div class="search-container">
         <input type="text" id="search-input" placeholder="Enter airport code (e.g., IRFD)">
         <button id="search-button" onclick="loadCharts()"><i class="fas fa-search"></i> Search</button>
-        <div id="search-results" class="search-results-dropdown"></div>
+        <div id="search-results" class="search-results"></div>
       </div>
       
       <div class="right-side-header">
-        <!-- Centered airport code display (initially hidden) -->
-        <div id="current-airport-display" class="centered-airport-code"></div>
+        <div id="current-airport-display"></div>
         <button id="toggle-search" class="icon-button">
           <i class="fa-solid fa-plane-departure"></i>
         </button>
@@ -69,15 +72,20 @@
     <div id="chart-display-gen-gnd" class="chart-display-gen-gnd" style="display: none;"></div>
 
     <!-- Sidebar Footer -->
-    <div class="sidebar-footer">
-      <p>24QuickCharts <span id="app-version"></span></p>
-    </div>
+<!-- Sidebar Footer -->
+<div class="sidebar-footer">
+    <p>24QuickCharts</p>
+</div>
   </div>
 
   <!-- Action Buttons (Bottom Right) -->
   <a href="https://discord.gg/HCXeChs4Ye" target="_blank" class="action-button discord-button">
     <i class="fab fa-discord"></i>
   </a>
+
+  <button id="show-pinned" class="action-button" style="right: 80px;">
+    <i class="fas fa-thumbtack"></i>
+  </button>
 
   <button id="theme-toggle" class="action-button">
     <i class="fas fa-adjust"></i>
@@ -87,27 +95,25 @@
     <i class="fas fa-info-circle"></i>
   </button>
 
-  <button id="pinned-toggle" class="action-button" style="right: 215px;">
-    <i class="fas fa-list"></i>
-  </button>
-
-  <!-- PDF Viewer -->
-  <div class="pdf-viewer" id="pdf-viewer">
-    <iframe id="pdf-iframe" src="" width="100%" height="100%"></iframe>
-    <button class="close-pdf" onclick="closePdfViewer()"><i class="fas fa-times"></i></button>
+  <!-- Image Viewer -->
+  <div class="image-viewer" id="image-viewer">
+    <img id="image-display" src="" alt="Chart Image">
+    <button class="close-image" onclick="closeImageViewer()"><i class="fas fa-times"></i></button>
+    <button class="recenter-button" onclick="recenterImage()">
+      <i class="fas fa-crosshairs"></i>
+    </button>
   </div>
 
-  <!-- Pinned Charts Overlay -->
-  <div id="pinned-overlay" class="credits-overlay">
-    <div class="credits-content">
-      <button class="close-credits" onclick="togglePinned(false)">
-        <i class="fas fa-times"></i>
-      </button>
-      <h2>Pinned Charts</h2>
-      <div id="pinned-tabs" class="pinned-tabs"></div>
-      <div id="pinned-charts-container"></div>
-    </div>
+<!-- Pinned Charts Sidebar -->
+<div class="pinned-sidebar" id="pinned-sidebar">
+  <div class="pinned-header">
+    <h2>Pinned Charts</h2>
+    <button class="close-pinned" onclick="togglePinnedSidebar()">
+      <i class="fas fa-times"></i>
+    </button>
   </div>
+  <div id="pinned-charts-list" class="pinned-list"></div>
+</div>
 
   <!-- Credits Modal -->
   <div id="credits-overlay" class="credits-overlay">
@@ -153,6 +159,7 @@
         <li>Greek_dutchman – Chart Author</li>
         <li>Midwest Avgeek – Chart Author</li>
         <li>p1anes – Chart Author</li>
+        <li>Majuki – Chart Author</li>
       </ul>
 
       <div style="margin-top: 20px; font-size: 0.9em; color: #666; border-top: 1px solid #ddd; padding-top: 10px;">
@@ -161,8 +168,49 @@
     </div>
   </div>
 
+    <!-- Update Modal -->
+  <div id="update-modal-overlay" class="update-modal-overlay" aria-hidden="true">
+    <!-- ...existing code... -->
+    <div class="update-modal" role="dialog" aria-modal="true" aria-labelledby="update-title">
+      <button class="update-close-x" aria-label="Close update" onclick="document.getElementById('update-close').click()">×</button>
+
+      <div class="update-header">
+        <h2 id="update-title">Update</h2>
+        <div class="meta" id="update-version">Version: </div>
+      </div>
+    <!-- ...existing code... -->
+
+      <hr class="update-separator">
+
+      <div id="update-body" class="update-body">
+        <p class="intro">Welcome to 24SmartCharts — here's what's new in this release:</p>
+        <div class="update-features">
+          <ul>
+            <li>Remade the full Chart viewer. We have now gone from a PDF viewer to a Image viewer running JPEG images. </li>
+            <li>Remade the pin function, now it's a sidebar instead of a modal. </li>
+            <li>Majuki's IZOL charts have been added</li>
+            <li>Aeronav 2502 Cycle updated charts added/changed</li>
+            <li>Added Update Modal</li>
+            <li>Touchups on the light/dark mode function.</li>
+            <!-- add more <li> items as needed -->
+          </ul>
+        </div>
+      </div>
+
+<div class="actions">
+  <button id="update-close" class="btn primary">Close</button>
+</div>
+
+      <div class="update-footer">
+        <a class="modal-discord" href="https://discord.gg/HCXeChs4Ye" target="_blank" rel="noopener">
+          <i class="fab fa-discord"></i> Join our Discord
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- Script -->
-  <script src="script.js"></script>
   <script src="version.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
